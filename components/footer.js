@@ -1,5 +1,5 @@
 /* ============================================
-   Footer Component
+   Footer Component — Fixed Grid Layout
    ============================================ */
 
 const Footer = (() => {
@@ -31,24 +31,24 @@ const Footer = (() => {
 <footer class="site-footer" id="site-footer" role="contentinfo">
   <div class="footer-inner container">
 
+    <!-- Column 1: Brand Info (Uses 1.8fr space) -->
     <div class="footer-brand">
       <a class="footer-logo" href="/" aria-label="WALink Generator">
         <span class="logo-icon" aria-hidden="true">
           <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="20" cy="20" r="20" fill="white"/>
-  <text 
-    x="50%" 
-    y="50%" 
-    text-anchor="middle" 
-    fill="#25D366" 
-    font-size="16" 
-    font-family="Arial, sans-serif" 
-    font-weight="bold" 
-    dy=".3em">
-    WA
-  </text>
-</svg>
-
+            <circle cx="20" cy="20" r="20" fill="white"/>
+            <text 
+              x="50%" 
+              y="50%" 
+              text-anchor="middle" 
+              fill="#25D366" 
+              font-size="16" 
+              font-family="Arial, sans-serif" 
+              font-weight="bold" 
+              dy=".3em">
+              WA
+            </text>
+          </svg>
         </span>
         <span class="logo-text">
           <span class="logo-name">WA Link</span>
@@ -65,16 +65,15 @@ const Footer = (() => {
       </div>
     </div>
 
-    <nav class="footer-nav" aria-label="Footer navigation">
-      ${Object.entries(LINKS).map(([group, items]) => `
-        <div class="footer-col">
-          <p class="footer-col-title">${group}</p>
-          <ul>
-            ${items.map(l => `<li><a class="footer-link" href="${l.href}">${l.label}</a></li>`).join('')}
-          </ul>
-        </div>
-      `).join('')}
-    </nav>
+    <!-- Columns 2, 3, & 4: Link Groups (Direct children for horizontal grid layout) -->
+    ${Object.entries(LINKS).map(([group, items]) => `
+      <div class="footer-col">
+        <p class="footer-col-title">${group}</p>
+        <ul>
+          ${items.map(l => `<li><a class="footer-link" href="${l.href}">${l.label}</a></li>`).join('')}
+        </ul>
+      </div>
+    `).join('')}
 
   </div>
 

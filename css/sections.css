@@ -133,7 +133,7 @@
 .footer-inner {
   padding: 72px 24px 48px;
   display: grid;
-  grid-template-columns: 1.8fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 48px;
 }
 .footer-brand .footer-logo {

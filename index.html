@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── Primary Meta ── -->
+  <title>WhatsApp Link Generator — Free WA.me Click-to-Chat Link Creator | WALink</title>
+  <meta name="description" content="Free WhatsApp link generator — create WA.me click-to-chat links with pre-filled messages instantly. No sign-up needed. Supports all country codes, QR codes, bulk generation & message templates." />
+  <meta name="keywords" content="whatsapp link generator, wa.me link, whatsapp click to chat, create whatsapp link, whatsapp direct link, whatsapp message link, free whatsapp link, whatsapp qr code generator, bulk whatsapp link, whatsapp business link" />
+  <meta name="author" content="WALink Generator" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://whatsapplinks.github.io/" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+
+  <!-- ── Open Graph ── -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://whatsapplinks.github.io/" />
+  <meta property="og:title"       content="WhatsApp Link Generator — Free WA.me Click-to-Chat Creator" />
+  <meta property="og:description" content="Create WhatsApp click-to-chat links in seconds. Free, no sign-up. Add pre-filled messages, generate QR codes, bulk links & more." />
+  <meta property="og:image"       content="https://whatsapplinks.github.io/og-image.png" />
+  <meta property="og:site_name"   content="WALink Generator" />
+  <meta property="og:locale"      content="en_US" />
+
+  <!-- ── Twitter Card ── -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="WhatsApp Link Generator — Free WA.me Click-to-Chat Creator" />
+  <meta name="twitter:description" content="Create WhatsApp click-to-chat links in seconds. Free, no sign-up required." />
+  <meta name="twitter:image"       content="https://whatsapplinks.github.io/og-image.png" />
+
+  <!-- ── Favicon ── -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%2325D366'/><text y='.9em' font-size='70' x='16'>💬</text></svg>" />
+
+  <!-- ── Preconnect ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- ── Fonts ── -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <!-- ── CSS ── -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+
+  <!-- ── QR Code Library ── -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+
+  <!-- ── Schema Markup ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "WhatsApp Link Generator",
+    "url": "https://whatsapplinks.github.io/",
+    "description": "Free WhatsApp link generator to create WA.me click-to-chat links with pre-filled messages, QR codes, bulk generation and message templates.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "WhatsApp Click-to-Chat Link Generation",
+      "Pre-filled Message Support",
+      "QR Code Generation",
+      "Bulk Link Creation",
+      "Message Templates",
+      "Link History",
+      "Country Code Selector",
+      "Mobile Compatible"
+    ],
+    "creator": {
+      "@type": "Organization",
+      "name": "WALink Generator",
+      "url": "https://whatsapplinks.github.io/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a WhatsApp link generator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A WhatsApp link generator creates wa.me URLs that open a WhatsApp chat with a specific phone number when clicked. These links can include a pre-filled message and work on any device with WhatsApp installed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I create a WhatsApp link?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Enter the phone number with country code, optionally add a pre-filled message, and click Generate Link. Your wa.me link is instantly created and ready to copy, share, or embed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this WhatsApp link generator free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, WALink Generator is completely free to use with no sign-up or registration required. Generate unlimited WhatsApp links at no cost."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the wa.me link format?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The wa.me format is https://wa.me/PHONENUMBER for a basic link, or https://wa.me/PHONENUMBER?text=MESSAGE for a link with a pre-filled message. The phone number must include the country code without the + sign."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I generate a WhatsApp QR code?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! After generating your WhatsApp link, click the QR Code button to create a scannable QR code that opens your WhatsApp chat. You can download it as a PNG image."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://whatsapplinks.github.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "WhatsApp Link Generator",
+        "item": "https://whatsapplinks.github.io/#generator"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- ── Header ── -->
+<div id="header-root"></div>
+
+<!-- ── Main Content ── -->
+<main id="main-content">
+
+  <!-- ══ SECTION 1: HERO ══ -->
+  <section class="hero" id="home" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="hero-inner">
+
+        <div class="hero-content">
+          <div class="hero-badge" role="note">
+            <span class="hero-badge-dot"></span>
+            Free WhatsApp Link Generator
+          </div>
+
+          <h1 class="hero-title" id="hero-title">
+            Create <span class="accent">WhatsApp Links</span><br/>
+            in Seconds — Free
+          </h1>
+
+          <p class="hero-desc">
+            Generate WA.me click-to-chat links with pre-filled messages instantly.
+            No sign-up. No limits. Share on any platform, website, or print material.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#generator" class="btn btn--primary btn--lg">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              Generate WA Link
+            </a>
+            <a href="#how-it-works" class="btn btn--outline btn--lg">
+              How It Works
+            </a>
+          </div>
+
+          <div class="hero-trust" aria-label="Key benefits">
+            <div class="hero-trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              100% Free
+            </div>
+            <div class="hero-trust-divider"></div>
+            <div class="hero-trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              No Sign-Up
+            </div>
+            <div class="hero-trust-divider"></div>
+            <div class="hero-trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              Privacy Safe
+            </div>
+          </div>
+        </div>
+
+        <!-- Phone Mockup Visual -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-visual-bg"></div>
+
+          <div class="hero-phone-mockup">
+            <div class="phone-header">
+              <div class="phone-avatar">👤</div>
+              <div class="phone-contact">
+                <div class="phone-contact-name">Your Customer</div>
+                <div class="phone-contact-status">online</div>
+              </div>
+            </div>
+            <div class="phone-body">
+              <div class="phone-bubble">
+                Hi! I'm interested in your product. Can you help me?
+                <div class="phone-bubble-time">09:41 ✓✓</div>
+              </div>
+              <div class="phone-bubble phone-bubble--sent">
+                Of course! I'd be happy to help 😊
+                <div class="phone-bubble-time">09:42 ✓✓</div>
+              </div>
+            </div>
+            <div class="phone-input-bar">
+              <div class="phone-input-fake">Message…</div>
+              <div class="phone-send-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-float-tag hero-float-tag--1">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            Link Generated!
+          </div>
+          <div class="hero-float-tag hero-float-tag--2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            QR Code Ready
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 2: STATS BAR ══ -->
+  <section class="stats-bar" aria-label="Usage statistics">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item" data-reveal>
+          <div class="stat-number"><span data-counter="2500000">0</span><sup>+</sup></div>
+          <div class="stat-label">Links Generated</div>
+        </div>
+        <div class="stat-item" data-reveal data-reveal-delay="2">
+          <div class="stat-number"><span data-counter="180">0</span><sup>+</sup></div>
+          <div class="stat-label">Countries Supported</div>
+        </div>
+        <div class="stat-item" data-reveal data-reveal-delay="3">
+          <div class="stat-number"><span data-counter="50000">0</span><sup>+</sup></div>
+          <div class="stat-label">Monthly Users</div>
+        </div>
+        <div class="stat-item" data-reveal data-reveal-delay="4">
+          <div class="stat-number"><span data-counter="100">0</span><sup>%</sup></div>
+          <div class="stat-label">Free Forever</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 3: GENERATOR ══ -->
+  <section class="section generator-section" id="generator" aria-labelledby="generator-title">
+    <div class="container">
+
+      <div class="section-header section-header--center" data-reveal>
+        <p class="section-label">WhatsApp Link Generator</p>
+        <h2 class="section-title" id="generator-title">Create Your WA Link Instantly</h2>
+        <p class="section-subtitle">
+          Enter a phone number, add an optional message, and get your shareable WhatsApp click-to-chat link in one click.
+        </p>
+      </div>
+
+      <div class="generator-wrap" data-reveal>
+        <!-- Tabs -->
+        <div class="gen-tabs" role="tablist" aria-label="Generator modes">
+          <button class="gen-tab active" data-tab="single" role="tab" aria-selected="true" aria-controls="panel-single">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            Single Link
+          </button>
+          <button class="gen-tab" data-tab="bulk" role="tab" aria-selected="false" aria-controls="panel-bulk">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+            Bulk Generator
+          </button>
+          <button class="gen-tab" data-tab="templates" role="tab" aria-selected="false" aria-controls="panel-templates">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            Message Templates
+          </button>
+          <button class="gen-tab" data-tab="history" role="tab" aria-selected="false" aria-controls="panel-history">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            History
+          </button>
+        </div>
+
+        <!-- Panel: Single Link -->
+        <div class="gen-panel active" id="panel-single" role="tabpanel" aria-labelledby="tab-single">
+          <form id="gen-form-single" novalidate>
+            <fieldset style="border:none;padding:0">
+              <legend class="form-label" style="margin-bottom:16px;font-size:1rem;font-weight:700;color:var(--ink);">
+                Phone Number Details
+              </legend>
+
+              <div class="phone-row">
+                <div class="form-group" style="margin-bottom:0">
+                  <label class="form-label" for="gen-country">Country Code</label>
+                  <select class="form-control" id="gen-country" aria-label="Select country code"></select>
+                </div>
+                <div class="form-group" style="margin-bottom:0">
+                  <label class="form-label" for="gen-phone">Phone Number <span class="req">*</span></label>
+                  <input
+                    class="form-control"
+                    type="tel"
+                    id="gen-phone"
+                    placeholder="e.g. 3001234567"
+                    autocomplete="tel"
+                    inputmode="numeric"
+                    aria-required="true"
+                    aria-describedby="phone-hint"
+                  />
+                  <p class="form-hint" id="phone-hint">Enter number without leading 0. Country code prepended automatically.</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="gen-message">Pre-filled Message <span style="font-weight:400;color:var(--ink-mute)">(optional)</span></label>
+                <textarea
+                  class="form-control"
+                  id="gen-message"
+                  rows="4"
+                  placeholder="Type your message here… e.g. Hi! I'm interested in your services."
+                  aria-describedby="char-count-desc"
+                  maxlength="4096"
+                ></textarea>
+                <p class="gen-char-count" id="gen-char-count" aria-live="polite" id="char-count-desc">0 / 4096 chars</p>
+              </div>
+            </fieldset>
+
+            <div class="gen-actions">
+              <button type="submit" class="btn btn--primary btn--lg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                Generate WhatsApp Link
+              </button>
+              <button type="reset" class="btn btn--outline">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.51"/></svg>
+                Clear
+              </button>
+            </div>
+          </form>
+
+          <!-- Result -->
+          <div class="gen-result hidden" id="gen-result" role="region" aria-label="Generated link" aria-live="polite">
+            <div class="gen-result-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              Your WhatsApp Link
+            </div>
+            <div class="gen-url-row">
+              <input
+                class="gen-url-output"
+                id="gen-url-output"
+                type="text"
+                readonly
+                aria-label="Generated WhatsApp link"
+              />
+              <button class="btn btn--primary" id="gen-copy-btn" aria-label="Copy link to clipboard">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                Copy Link
+              </button>
+              <button class="btn btn--outline" id="gen-open-btn" aria-label="Open in WhatsApp">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Open
+              </button>
+              <button class="btn btn--ghost" id="gen-qr-btn" aria-label="Generate QR code" aria-expanded="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="3" height="3"/></svg>
+                QR Code
+              </button>
+            </div>
+
+            <!-- QR Box -->
+            <div class="gen-qr-box hidden" id="gen-qr-box" aria-label="QR Code">
+              <div id="gen-qr-canvas"></div>
+              <p>Scan with any camera to open WhatsApp</p>
+              <button class="btn btn--outline btn--sm" id="gen-qr-dl" aria-label="Download QR code">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download QR
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel: Bulk -->
+        <div class="gen-panel" id="panel-bulk" role="tabpanel">
+          <div class="panel-header">
+            <p class="panel-title">Bulk WhatsApp Link Generator</p>
+          </div>
+          <p class="bulk-hint">
+            Enter one phone number per line. Optionally add a custom message after a comma.<br/>
+            Format: <code>CountryCode+Number</code> or <code>CountryCode+Number, Your message here</code><br/>
+            Example: <code>923001234567, Hi, I saw your listing!</code> — Maximum 100 numbers per batch.
+          </p>
+          <div class="form-group">
+            <label class="form-label" for="bulk-input">Phone Numbers</label>
+            <textarea
+              class="form-control"
+              id="bulk-input"
+              rows="8"
+              placeholder="923001234567&#10;14155552671, Hello from the US!&#10;447911123456, Hi there!"
+              aria-label="Phone numbers for bulk link generation"
+            ></textarea>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <button class="btn btn--primary" id="bulk-gen-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/></svg>
+              Generate All Links
+            </button>
+            <button class="btn btn--outline hidden" id="bulk-copy-all">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              Copy All Links
+            </button>
+          </div>
+          <div class="bulk-result hidden" id="bulk-result" role="region" aria-live="polite" aria-label="Bulk generated links"></div>
+        </div>
+
+        <!-- Panel: Templates -->
+        <div class="gen-panel" id="panel-templates" role="tabpanel">
+          <div class="panel-header">
+            <p class="panel-title">Message Templates</p>
+          </div>
+          <p style="font-size:.88rem;color:var(--ink-3);margin-bottom:20px;">
+            Click a template to apply it to your message. You can edit it before generating the link.
+          </p>
+          <div class="tpl-controls">
+            <label class="form-label" for="tpl-category" style="margin-bottom:0">Category:</label>
+            <select class="form-control" id="tpl-category" style="width:auto;min-width:180px;">
+              <option value="business">💼 Business</option>
+              <option value="ecommerce">🛒 E-Commerce</option>
+              <option value="personal">👤 Personal</option>
+            </select>
+          </div>
+          <div class="tpl-list" id="tpl-list" role="list" aria-label="Message templates"></div>
+        </div>
+
+        <!-- Panel: History -->
+        <div class="gen-panel" id="panel-history" role="tabpanel">
+          <div class="panel-header">
+            <p class="panel-title">Link History</p>
+            <button class="btn btn--ghost btn--sm" id="history-clear" aria-label="Clear all history">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
+              Clear All
+            </button>
+          </div>
+          <div id="history-list" role="list" aria-label="Link history" aria-live="polite"></div>
+        </div>
+
+      </div><!-- /.generator-wrap -->
+    </div>
+  </section>
+
+  <!-- ══ SECTION 4: FEATURES ══ -->
+  <section class="section" id="features" aria-labelledby="features-title">
+    <div class="container">
+      <div class="section-header section-header--center" data-reveal>
+        <p class="section-label">What You Get</p>
+        <h2 class="section-title" id="features-title">Powerful Features, Zero Cost</h2>
+        <p class="section-subtitle">Everything you need to create, manage, and share WhatsApp links — packed into one clean, fast tool.</p>
+      </div>
+
+      <div class="features-grid">
+
+        <article class="card feature-card" data-reveal data-reveal-delay="1">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </div>
+          <h3 class="feature-title">Instant WA.me Link Creation</h3>
+          <p class="feature-desc">Generate wa.me click-to-chat links instantly for any WhatsApp number worldwide. No delay, no server-side processing — everything runs in your browser.</p>
+        </article>
+
+        <article class="card feature-card" data-reveal data-reveal-delay="2">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <h3 class="feature-title">Pre-filled Message Support</h3>
+          <p class="feature-desc">Add a custom pre-filled message to your link. When someone clicks it, the message is automatically populated in WhatsApp — perfect for sales, support, and campaigns.</p>
+        </article>
+
+        <article class="card feature-card" data-reveal data-reveal-delay="3">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="3" height="3"/></svg>
+          </div>
+          <h3 class="feature-title">QR Code Generator</h3>
+          <p class="feature-desc">Create a scannable QR code for any WhatsApp link instantly. Ideal for flyers, business cards, menus, product packaging, and in-store displays.</p>
+        </article>
+
+        <article class="card feature-card" data-reveal data-reveal-delay="4">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          </div>
+          <h3 class="feature-title">Bulk Link Generator</h3>
+          <p class="feature-desc">Generate up to 100 WhatsApp links in one batch. Paste your list of numbers, and get all links instantly — with support for per-number custom messages.</p>
+        </article>
+
+        <article class="card feature-card" data-reveal data-reveal-delay="5">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <h3 class="feature-title">Message Templates Library</h3>
+          <p class="feature-desc">Choose from pre-written templates for business inquiries, e-commerce, appointments, and more. Apply with one click and customise as needed.</p>
+        </article>
+
+        <article class="card feature-card" data-reveal data-reveal-delay="6">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 class="feature-title">Local Link History</h3>
+          <p class="feature-desc">All generated links are saved locally in your browser. Access, re-copy, or delete previously created links anytime without any account or server.</p>
+        </article>
+
+        <article class="card feature-card" data-reveal data-reveal-delay="1">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3 class="feature-title">180+ Country Codes</h3>
+          <p class="feature-desc">Full country code selector with flag emojis. Find any country instantly — from the US and UK to Pakistan, UAE, India, Nigeria, Brazil, and beyond.</p>
+        </article>
+
+        <article class="card feature-card" data-reveal data-reveal-delay="2">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3 class="feature-title">Mobile Optimised</h3>
+          <p class="feature-desc">Fully responsive design works flawlessly on smartphones, tablets, and desktops. Generate and share WhatsApp links directly from your mobile device.</p>
+        </article>
+
+        <article class="card feature-card" data-reveal data-reveal-delay="3">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="feature-title">Privacy-First & Secure</h3>
+          <p class="feature-desc">We never store your phone numbers or messages on any server. The tool runs entirely client-side — your data never leaves your browser.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 5: HOW IT WORKS ══ -->
+  <section class="section section--tinted" id="how-it-works" aria-labelledby="how-title">
+    <div class="container">
+      <div class="section-header section-header--center" data-reveal>
+        <p class="section-label">Simple Process</p>
+        <h2 class="section-title" id="how-title">How to Create a WhatsApp Link</h2>
+        <p class="section-subtitle">Create your WhatsApp click-to-chat link in four simple steps — no technical knowledge required.</p>
+      </div>
+
+      <div class="steps-grid" role="list">
+        <div class="step-card card" role="listitem" data-reveal data-reveal-delay="1">
+          <div class="step-number" aria-hidden="true">1</div>
+          <h3 class="step-title">Select Country Code</h3>
+          <p class="step-desc">Choose your country from the dropdown to automatically prepend the correct international dialling code.</p>
+        </div>
+        <div class="step-card card" role="listitem" data-reveal data-reveal-delay="2">
+          <div class="step-number" aria-hidden="true">2</div>
+          <h3 class="step-title">Enter Phone Number</h3>
+          <p class="step-desc">Type the WhatsApp number you want to link to. No need to add a "+" or leading zeros — we handle the formatting.</p>
+        </div>
+        <div class="step-card card" role="listitem" data-reveal data-reveal-delay="3">
+          <div class="step-number" aria-hidden="true">3</div>
+          <h3 class="step-title">Add a Message (Optional)</h3>
+          <p class="step-desc">Write a pre-filled message that recipients will see when they open the link. Use templates or write your own.</p>
+        </div>
+        <div class="step-card card" role="listitem" data-reveal data-reveal-delay="4">
+          <div class="step-number" aria-hidden="true">4</div>
+          <h3 class="step-title">Copy & Share</h3>
+          <p class="step-desc">Copy your generated wa.me link, download the QR code, or open it directly in WhatsApp. Share anywhere instantly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 6: USE CASES ══ -->
+  <section class="section" id="use-cases" aria-labelledby="usecases-title">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <p class="section-label">Who Uses It</p>
+        <h2 class="section-title" id="usecases-title">Perfect for Every Use Case</h2>
+        <p class="section-subtitle">From small businesses to enterprises, anyone who uses WhatsApp to communicate can benefit from a click-to-chat link.</p>
+      </div>
+
+      <div class="usecases-grid">
+
+        <article class="card usecase-card" data-reveal data-reveal-delay="1">
+          <div class="usecase-icon" aria-hidden="true">🏪</div>
+          <div>
+            <h3 class="usecase-title">Small Businesses & Retail</h3>
+            <p class="usecase-desc">Add a "Chat on WhatsApp" button to your website, Google Business profile, or social media bio. Let customers reach you instantly without searching for your number. Reduces friction and increases inquiries.</p>
+          </div>
+        </article>
+
+        <article class="card usecase-card" data-reveal data-reveal-delay="2">
+          <div class="usecase-icon" aria-hidden="true">📱</div>
+          <div>
+            <h3 class="usecase-title">Digital Marketing & Campaigns</h3>
+            <p class="usecase-desc">Embed WA.me links in email campaigns, SMS, Instagram stories, and Facebook ads. Pre-fill messages like "I'm interested in [offer]" to capture intent and increase conversion rates on marketing campaigns.</p>
+          </div>
+        </article>
+
+        <article class="card usecase-card" data-reveal data-reveal-delay="3">
+          <div class="usecase-icon" aria-hidden="true">🛒</div>
+          <div>
+            <h3 class="usecase-title">E-Commerce & Online Stores</h3>
+            <p class="usecase-desc">Place a WhatsApp link on product pages so customers can ask questions before buying. Use pre-filled messages like "I want to order [product]" to speed up the sales process for your online store.</p>
+          </div>
+        </article>
+
+        <article class="card usecase-card" data-reveal data-reveal-delay="4">
+          <div class="usecase-icon" aria-hidden="true">🎓</div>
+          <div>
+            <h3 class="usecase-title">Education & Tutoring</h3>
+            <p class="usecase-desc">Teachers and tutors can share WhatsApp links with students or parents for quick communication. Coaching institutes use QR codes on flyers so prospective students can reach them in one scan.</p>
+          </div>
+        </article>
+
+        <article class="card usecase-card" data-reveal data-reveal-delay="5">
+          <div class="usecase-icon" aria-hidden="true">🏥</div>
+          <div>
+            <h3 class="usecase-title">Healthcare & Clinics</h3>
+            <p class="usecase-desc">Clinics and healthcare providers can let patients book appointments or ask questions via WhatsApp. A pre-filled message like "I'd like to book an appointment" makes the process even easier for patients.</p>
+          </div>
+        </article>
+
+        <article class="card usecase-card" data-reveal data-reveal-delay="6">
+          <div class="usecase-icon" aria-hidden="true">🏠</div>
+          <div>
+            <h3 class="usecase-title">Real Estate & Property</h3>
+            <p class="usecase-desc">Real estate agents add WhatsApp links to property listings. Interested buyers click once to start a conversation. QR codes on "For Sale" boards let prospects message instantly while viewing the property.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 7: WA LINK FORMATS ══ -->
+  <section class="section section--alt" id="formats" aria-labelledby="formats-title">
+    <div class="container">
+      <div class="section-header section-header--center" data-reveal>
+        <p class="section-label">Technical Reference</p>
+        <h2 class="section-title" id="formats-title">WhatsApp Link Formats Explained</h2>
+        <p class="section-subtitle">Understand the different wa.me URL formats and when to use each one for your click-to-chat links.</p>
+      </div>
+
+      <div class="formats-grid">
+
+        <article class="card format-card" data-reveal data-reveal-delay="1">
+          <h3 class="format-title">Basic Click-to-Chat Link</h3>
+          <div class="format-code">https://wa.me/[phone]</div>
+          <p class="format-desc">The simplest WA.me link format. Opens WhatsApp with the specified number pre-loaded. No message is included. Best for business cards, email signatures, and simple contact buttons.</p>
+        </article>
+
+        <article class="card format-card" data-reveal data-reveal-delay="2">
+          <h3 class="format-title">Link with Pre-filled Message</h3>
+          <div class="format-code">https://wa.me/[phone]?text=Hello%20there!</div>
+          <p class="format-desc">Adds a URL-encoded pre-filled message. When the user clicks, the message is already typed in the chat box — they just press send. Ideal for marketing, lead gen, and sales funnels.</p>
+        </article>
+
+        <article class="card format-card" data-reveal data-reveal-delay="3">
+          <h3 class="format-title">WhatsApp API Format (wa.me)</h3>
+          <div class="format-code">https://api.whatsapp.com/send?phone=[phone]&text=Hi</div>
+          <p class="format-desc">The older API format still widely supported. Works identically to wa.me links. Both formats open WhatsApp on mobile apps and WhatsApp Web for desktop users.</p>
+        </article>
+
+        <article class="card format-card" data-reveal data-reveal-delay="4">
+          <h3 class="format-title">Phone Number Format Rules</h3>
+          <div class="format-code">Country Code + Number (no + sign, no spaces)</div>
+          <p class="format-desc">Phone numbers must include the international country code. Remove all spaces, dashes, and the leading "0". Example: UK +44 7911 123456 becomes 447911123456 in the link.</p>
+        </article>
+
+        <article class="card format-card" data-reveal data-reveal-delay="5">
+          <h3 class="format-title">Message URL Encoding</h3>
+          <div class="format-code">Spaces = %20, & = %26, ? = %3F</div>
+          <p class="format-desc">Messages in WhatsApp links must be URL-encoded. Our generator handles this automatically — just type your message in plain English and we encode it for you correctly every time.</p>
+        </article>
+
+        <article class="card format-card" data-reveal data-reveal-delay="6">
+          <h3 class="format-title">WhatsApp QR Code Format</h3>
+          <div class="format-code">QR encodes the full wa.me URL</div>
+          <p class="format-desc">WhatsApp QR codes simply encode your wa.me link as a machine-readable image. When scanned with any camera app, it opens WhatsApp directly — perfect for print and physical media.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 8: ABOUT / WHY ══ -->
+  <section class="section" id="about" aria-labelledby="about-title">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-content" data-reveal>
+          <p class="section-label">Why WALink Generator</p>
+          <h2 class="section-title" id="about-title">The Simplest Way to Create WA Links</h2>
+          <div class="divider"></div>
+          <p>WhatsApp is the world's most popular messaging platform with over 2 billion active users. Businesses and individuals alike rely on WhatsApp for communication — yet creating a direct clickable link to start a chat isn't built into WhatsApp's own interface.</p>
+          <p>WALink Generator fills that gap. We built the cleanest, fastest, and most feature-rich free WhatsApp link generator available — with no registration, no ads, and no data collection. Your privacy is fully respected.</p>
+          <p>Whether you're a freelancer adding a contact link to your portfolio, a business running a WhatsApp marketing campaign, or a developer integrating WA links into an app — WALink Generator is the right tool.</p>
+
+          <div class="about-features">
+            <div class="about-feature-item">
+              <div class="about-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+              <p class="about-feature-text"><strong>Zero data collection</strong> — phone numbers and messages never reach our servers</p>
+            </div>
+            <div class="about-feature-item">
+              <div class="about-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+              <p class="about-feature-text"><strong>No registration required</strong> — open the site and start generating immediately</p>
+            </div>
+            <div class="about-feature-item">
+              <div class="about-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+              <p class="about-feature-text"><strong>Unlimited link generation</strong> — create as many WA links as you need, forever free</p>
+            </div>
+            <div class="about-feature-item">
+              <div class="about-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+              <p class="about-feature-text"><strong>Works with all WhatsApp types</strong> — personal, WhatsApp Business, and Business API accounts</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-visual" data-reveal data-reveal-delay="2" aria-hidden="true">
+          <div class="about-card-stack">
+            <div class="about-card-main">
+              <div class="about-card-stat">
+                <div class="about-card-stat-num"><span data-counter="2000000000">0</span></div>
+                <div class="about-card-stat-lbl">WhatsApp Users Worldwide</div>
+              </div>
+              <div class="about-card-list">
+                <div class="about-card-row">
+                  <span class="about-card-row-label">Avg. messages / day</span>
+                  <span class="about-card-row-val">100 Billion+</span>
+                </div>
+                <div class="about-card-row">
+                  <span class="about-card-row-label">Countries available</span>
+                  <span class="about-card-row-val">180+</span>
+                </div>
+                <div class="about-card-row">
+                  <span class="about-card-row-label">WA Business users</span>
+                  <span class="about-card-row-val">200 Million+</span>
+                </div>
+                <div class="about-card-row">
+                  <span class="about-card-row-label">Open rate vs email</span>
+                  <span class="about-card-row-val">98% vs 20%</span>
+                </div>
+              </div>
+            </div>
+            <div class="about-tag-1">
+              <span style="color:var(--green-primary)">✓</span> Privacy Safe
+            </div>
+            <div class="about-tag-2">
+              ⚡ Instant Generation
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 9: SEO CONTENT ══ -->
+  <section class="section section--alt" aria-labelledby="seo-title">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <p class="section-label">Everything You Need to Know</p>
+        <h2 class="section-title" id="seo-title">WhatsApp Links: Complete Guide</h2>
+        <p class="section-subtitle">Learn how WhatsApp click-to-chat links work, the wa.me format, and best practices for using WA links in your business.</p>
+      </div>
+
+      <div class="seo-grid">
+        <div class="seo-block" data-reveal data-reveal-delay="1">
+          <h3>What Is a WhatsApp Link (WA.me)?</h3>
+          <p>A WhatsApp link, also known as a click-to-chat link or WA.me link, is a URL that opens a WhatsApp chat window directly when clicked. The link format is <code style="background:var(--surface-3);padding:1px 5px;border-radius:4px;font-size:.85rem;">https://wa.me/PHONENUMBER</code> where the phone number includes the country code but no + sign.</p>
+          <p>When a user clicks a WhatsApp link on a mobile device, it opens the WhatsApp app. On desktop, it opens WhatsApp Web. The recipient doesn't need to save the number first — it jumps straight to the chat screen.</p>
+        </div>
+
+        <div class="seo-block" data-reveal data-reveal-delay="2">
+          <h3>How to Create a WhatsApp Link for Free</h3>
+          <p>Creating a WhatsApp link is simple with WALink Generator. Enter the phone number with country code, optionally write a pre-filled message, and click Generate. The tool instantly produces a valid wa.me URL you can copy, share, or embed anywhere.</p>
+          <p>For manual creation, use: <code style="background:var(--surface-3);padding:1px 5px;border-radius:4px;font-size:.85rem;">https://wa.me/[country_code][phone]?text=[encoded_message]</code>. Replace spaces in the message with %20 and special characters with their URL-encoded equivalents.</p>
+        </div>
+
+        <div class="seo-block" data-reveal data-reveal-delay="3">
+          <h3>WhatsApp Link for Business & WhatsApp Business API</h3>
+          <p>WhatsApp Business links work exactly the same as personal links — the wa.me URL format is identical. The difference is the type of account the number belongs to. Adding a WhatsApp link to your Google Business listing, website, and social media can significantly increase customer contact rates.</p>
+          <p>Businesses using the WhatsApp Business API can use the same wa.me link format. Pre-filled messages are especially powerful for businesses — they help qualify leads before the conversation even starts.</p>
+        </div>
+
+        <div class="seo-block" data-reveal data-reveal-delay="4">
+          <h3>WhatsApp QR Code: What It Is & How to Use It</h3>
+          <p>A WhatsApp QR code is simply a wa.me link encoded as a visual QR image. When scanned with a smartphone camera, it opens WhatsApp exactly like clicking the link. QR codes are perfect for print materials — business cards, flyers, restaurant menus, event banners, and product packaging.</p>
+          <p>WALink Generator creates high-resolution downloadable QR codes for any WhatsApp link. Just generate your link and click the QR Code button. Download the PNG and use it in any design application or print it directly.</p>
+        </div>
+
+        <div class="seo-block" data-reveal data-reveal-delay="5">
+          <h3>Best Practices for WhatsApp Click-to-Chat Links</h3>
+          <p>Always include a pre-filled message that sets context — it increases the chance the recipient knows what the conversation is about. For marketing, use specific, campaign-relevant messages like "Hi, I saw your Facebook ad about [product]."</p>
+          <p>Place WhatsApp links prominently — above the fold on websites, in email footers, on Google Business profiles, and in social media bios. A floating WhatsApp button on websites has been shown to increase customer enquiries significantly.</p>
+        </div>
+
+        <div class="seo-block" data-reveal data-reveal-delay="6">
+          <h3>WhatsApp Link vs WhatsApp Group Link</h3>
+          <p>A WhatsApp link (wa.me) opens a direct chat with a specific number. A WhatsApp group invite link, in contrast, adds the user to a group. Group links are generated inside WhatsApp itself (Group Settings → Invite via Link) and cannot be created by third-party tools.</p>
+          <p>For business customer service, direct wa.me links are preferred over group links. They allow private, one-on-one conversations that feel personal and professional, rather than adding customers to shared group chats.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 10: FAQ ══ -->
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="section-header section-header--center" data-reveal>
+        <p class="section-label">FAQs</p>
+        <h2 class="section-title" id="faq-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Everything you need to know about WhatsApp link generation, wa.me URLs, and using this tool.</p>
+      </div>
+
+      <div class="faq-list" data-reveal>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            What is a WhatsApp link generator and how does it work?
+            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-a" hidden>
+            <p>A WhatsApp link generator is a tool that creates wa.me click-to-chat URLs for any phone number. When someone clicks the link, WhatsApp opens immediately with that contact ready to message — no need to save the number. Our generator also lets you add a pre-filled message that appears automatically in the chat box.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Is the WhatsApp link generator completely free?
+            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-a" hidden>
+            <p>Yes — WALink Generator is 100% free with no hidden fees, no premium plans, and no sign-up required. You can generate unlimited WhatsApp links, QR codes, and bulk links without any cost. It will always be free.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Do I need to create an account to use this tool?
+            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-a" hidden>
+            <p>No account, no email, no registration needed. Open the site, enter a number, and generate your link immediately. Your link history is saved locally in your browser — no server involvement whatsoever.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            What phone number format should I use?
+            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-a" hidden>
+            <p>Select your country from the country code dropdown (which adds the international code automatically) then enter the local number without the leading 0. For example, for a UK number +44 7911 123456, select "UK +44" and enter 7911123456. Our tool handles all the formatting for you.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Will the WhatsApp link work on iPhone and Android?
+            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-a" hidden>
+            <p>Yes. WA.me links work on all platforms — iPhone (iOS), Android, and desktop (Windows/Mac via WhatsApp Web). As long as the device has WhatsApp installed, clicking the link will open the chat. On devices without WhatsApp, users are prompted to install it.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Can I create a WhatsApp link without saving the number?
+            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-a" hidden>
+            <p>That's exactly what WhatsApp links do! You don't need to save a number to your contacts — just click the wa.me link and WhatsApp opens directly to a chat with that number. This is the primary use case: letting customers or contacts message you without saving your number first.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            How do I add a WhatsApp link to my website?
+            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-a" hidden>
+            <p>Copy your generated link and use it as an href in an HTML anchor tag: <code style="background:var(--surface-3);padding:2px 6px;border-radius:4px;font-size:.83rem;">&lt;a href="https://wa.me/1234567890"&gt;Chat on WhatsApp&lt;/a&gt;</code>. For a floating button, use CSS to position it fixed at the bottom-right. Most website builders (WordPress, Wix, Squarespace) have WhatsApp button plugins that accept the wa.me URL.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Is my phone number stored or shared when I use this tool?
+            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-a" hidden>
+            <p>Absolutely not. All link generation happens entirely in your browser using JavaScript. Your phone number, message, and any data you enter never leaves your device. We don't have any backend servers processing your data. Your link history is saved only in your own browser's localStorage.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            What's the difference between wa.me and api.whatsapp.com links?
+            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-a" hidden>
+            <p>Both formats do the same thing. <code style="background:var(--surface-3);padding:1px 5px;border-radius:4px;font-size:.85rem;">wa.me/NUMBER</code> is the short, preferred format introduced by WhatsApp. The older <code style="background:var(--surface-3);padding:1px 5px;border-radius:4px;font-size:.85rem;">api.whatsapp.com/send?phone=NUMBER</code> format is still functional. We recommend the wa.me format as it's shorter, cleaner, and the current official standard.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA BANNER ══ -->
+  <section class="section" aria-label="Call to action">
+    <div class="container">
+      <div class="cta-banner" data-reveal>
+        <div class="cta-banner-content">
+          <p class="cta-banner-eyebrow">Ready to Get Started?</p>
+          <h2 class="cta-banner-title">Create Your WhatsApp Link Now</h2>
+          <p class="cta-banner-desc">Join thousands of businesses and individuals using WALink Generator to share their WhatsApp contact instantly. Free forever.</p>
+          <a href="#generator" class="btn btn--primary btn--lg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            Generate Free WA Link
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── Footer ── -->
+<div id="footer-root"></div>
+
+<!-- ── Toast Container ── -->
+<div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+<!-- ── Back to Top ── -->
+<button id="back-top" aria-label="Scroll back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- ── Scripts ── -->
+<script src="components/header.js"></script>
+<script src="components/footer.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

@@ -4,11 +4,11 @@
 
 const Header = (() => {
   const NAV_LINKS = [
-    { label: 'Generator',  href: '#generator' },
-    { label: 'Features',   href: '#features'  },
-    { label: 'How It Works', href: '#how-it-works' },
-    { label: 'Use Cases',  href: '#use-cases'  },
-    { label: 'FAQ',        href: '#faq'        },
+    { label: 'Generator',  href: '/#generator' },
+    { label: 'Features',   href: '/features'  },
+    { label: 'How It Works', href: '/#how-it-works' },
+    { label: 'Use Cases',  href: '/#use-cases'  },
+    { label: 'FAQ',        href: '/#faq'        },
   ];
 
   function render() {

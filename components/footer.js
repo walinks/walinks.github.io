@@ -17,6 +17,7 @@ const Footer = (() => {
       { label: 'Use Cases',       href: '/#use-cases'    },
       { label: 'FAQ',             href: '/#faq'          },
       { label: 'WhatsApp Formats', href: '/#formats'     },
+      { label: 'WhatsApp Groups', href: '/whatsapp-groups'     },
     ],
     Company: [
       { label: 'About',       href: '/about'   },

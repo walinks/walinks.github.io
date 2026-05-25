@@ -19,7 +19,7 @@ const Footer = (() => {
       { label: 'WhatsApp Formats', href: '/#formats'     },
       { label: 'WhatsApp Groups', href: '/whatsapp-groups'     },
     ],
-    Company: [
+    Pages: [
       { label: 'About',       href: '/about'   },
       { label: 'Privacy Policy', href: '/privacy'     },
       { label: 'Terms of Use',   href: '/terms'     },

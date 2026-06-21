@@ -83,10 +83,7 @@ const Footer = (() => {
     <div class="container footer-bottom-inner">
       <p class="footer-copy">
         &copy; ${YEAR} <strong>WALink Generator</strong> — walinks.github.io. All rights reserved.
-      </p>
-      <p class="footer-disclaimer">
-        Not affiliated with WhatsApp LLC or Meta Platforms, Inc.
-      </p>
+      </p>      
     </div>
   </div>
 </footer>`;

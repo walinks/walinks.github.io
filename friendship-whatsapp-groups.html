@@ -739,31 +739,40 @@
 
 <script>
   (function () {
-    const updatedFriendshipGroups = [
-      {
-        name: "Global Friends & Daily Chat 🌍",
-        url: "https://chat.whatsapp.com/invite/EtUznVtEokv16H7FjXIXTZ"
-      },
-      {
-        name: "Friendly Hangout & Social Lounge 🤝",
-        url: "https://chat.whatsapp.com/invite/1MDFuYIghptLUqEvYREzXN"
-      },
-      {
-        name: "International Chat & Chill Hub 💬",
-        url: "https://chat.whatsapp.com/CXB4lnsS5kMHBlCqeXc3G4"
-      },
-      {
-        name: "Make New Friends Worldwide 🌟",
-        url: "https://chat.whatsapp.com/D15AOlHfzI1FBETQiagRAt"
-      },
-      {
-        name: "24/7 Friendly Talk & Good Vibes 😊",
-        url: "https://chat.whatsapp.com/EMrMzKoj0EPIkPbZTORYGH"
-      },
-      {
-        name: "Social Circle & Casual Chat Room 👥",
-        url: "https://chat.whatsapp.com/Ikz7RAZyzziB47ubLS8II2"
-      }
+    const curatedFriendshipGroups = [
+      { name: "True Friends Forever", url: "https://chat.whatsapp.com/JnsMdz0SUI60WePw58omPa" },
+      { name: "Friendship Club", url: "https://chat.whatsapp.com/IiJwWRVxPIiF77jjdPRT8v" },
+      { name: "Global Friends Hub", url: "https://chat.whatsapp.com/CgZQykHzAI7JEBNxzuRVQo" },
+      { name: "Friends Forever", url: "https://chat.whatsapp.com/GDHoC3UfJ1nIF5y4isfwZh" },
+      { name: "The Strangers", url: "https://chat.whatsapp.com/HtcjFRjKq0bI4SahZv92mz" },
+      { name: "International Friends", url: "https://chat.whatsapp.com/HLMv0Z9d29j1aWeh1gW8dV" },
+      { name: "International Friendship Vibe", url: "https://chat.whatsapp.com/J3GXdhIXbFw5iTFxXj0TAQ" },
+      { name: "Random Friends Group", url: "https://chat.whatsapp.com/GTdHd4IZdYy7SPnPmdFwpN" },
+      { name: "FRIENDS", url: "https://chat.whatsapp.com/DbJMMJ1ItjT19JopEz7QSm" },
+      { name: "Chatting Club", url: "https://chat.whatsapp.com/DpkJ82JNsqpLOpmVtv9bTT" },
+      { name: "Speak Up For Good", url: "https://chat.whatsapp.com/IfxUjSPpilJJfma7JadUFF" },
+      { name: "Russian-English Chat", url: "https://chat.whatsapp.com/CVjg3TbAu86JLk2sKk8zTA" },
+      { name: "One House", url: "https://chat.whatsapp.com/BKYKH4AghgzGpcVCGxjRsj" },
+      { name: "Madhumakshika", url: "https://chat.whatsapp.com/I9ddGKGScCVFRAqUUOIyAz" },
+      { name: "Glocal Connects", url: "https://chat.whatsapp.com/ESnhWdz4TTL5d9S6VDfEGJ" },
+      { name: "International Friends Group", url: "https://chat.whatsapp.com/GEH5xPD3Kkx3odpeP8NloE" },
+      { name: "THE FRIENDSHIP ATLAS", url: "https://chat.whatsapp.com/IjFuE7VHZF1E4lM8b8L2on" },
+      { name: "INTERNATIONAL FRIENDSHIP", url: "https://chat.whatsapp.com/D0XmAGsXkkm7H168VKKSRf" },
+      { name: "HANGOUT", url: "https://chat.whatsapp.com/B7bI1el92ihEgcbjEU9jXD" },
+      { name: "American Friendship", url: "https://chat.whatsapp.com/EOBaox2SO21GYjWUwC8sc3" },
+      { name: "India Friends", url: "https://chat.whatsapp.com/HXYrLDxznt2LxSgkwEoCFm" },
+      { name: "Pakistan Friends Club", url: "https://chat.whatsapp.com/HyYQXrjInAb27ImuTgfpQM" },
+      { name: "World Chatting Friends", url: "https://chat.whatsapp.com/FyeCmfq3ShoKlX1GxM3eUE" },
+      { name: "Friends Gang Chat", url: "https://chat.whatsapp.com/INLhhCnQtoMGhHBaDyhyoZ" },
+      { name: "Best Friend Group", url: "https://chat.whatsapp.com/8w9Ye8GWc9h0o35qYEgezy" },
+      { name: "International GC", url: "https://chat.whatsapp.com/HZlFSDh5CwE71yR0x4Pzf1" },
+      { name: "New Chat Group", url: "https://chat.whatsapp.com/BOkkMTb4GLC1MrqCu1YVQA" },
+      { name: "Virtual Friends", url: "https://chat.whatsapp.com/BDFqz41WCK99Iy6jgXlMlr" },
+      { name: "International Friends 2026", url: "https://chat.whatsapp.com/F3ogC7pMfr1JVdulVh3D2Y" },
+      { name: "Indian Friendship Chat", url: "https://chat.whatsapp.com/CV1l9DoLPKm2oiBt5T3HUU" },
+      { name: "Global Friends Chat", url: "https://chat.whatsapp.com/CmrXN4xgorVB0MFMiiAF0E" },
+      { name: "Friendship Hub", url: "https://chat.whatsapp.com/D525rmYmgcV5rxYpT9MsxX" },
+      { name: "Chat With Friends", url: "https://chat.whatsapp.com/LLfxnQ6vnw083hWESHK9Ao" }
     ];
 
     const grid = document.getElementById("friendship-groups-grid");
@@ -771,7 +780,7 @@
 
     function buildExpectedMarkup() {
       const ctaLabel = (grid && grid.getAttribute("data-cta")) || "Join Group on WhatsApp";
-      return updatedFriendshipGroups.map(group => `
+      return curatedFriendshipGroups.map(group => `
         <div class="group-card" data-updated-link="true">
           <div class="group-name">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -789,7 +798,7 @@
 
     function applyUpdatedLinks() {
       if (!grid || isSyncing) return;
-      const expectedUrls = updatedFriendshipGroups.map(g => g.url);
+      const expectedUrls = curatedFriendshipGroups.map(g => g.url);
       const renderedLinks = Array.from(grid.querySelectorAll(".group-link a")).map(a => a.getAttribute("href"));
 
       const matchesExpected =

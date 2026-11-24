@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JTB3YXT11C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JTB3YXT11C');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── Primary Meta ── -->
+  <title>WhatsApp Text Formatter &amp; Font Styler — Bold, Italic, Strikethrough &amp; Fancy Fonts</title>
+  <meta name="description" content="Format WhatsApp messages with bold, italic, strikethrough, monospace, lists and quotes, preview them live, and copy fancy Unicode fonts. Free online tool." />
+  <meta name="keywords" content="whatsapp text formatter, whatsapp bold italic strikethrough, whatsapp font generator, whatsapp fancy text, whatsapp stylish text" />
+  <meta name="author" content="WALink Generator" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <link rel="canonical" href="https://walinks.github.io/whatsapp-text-formatter" />
+
+  <!-- ── Open Graph ── -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://walinks.github.io/whatsapp-text-formatter" />
+  <meta property="og:title"       content="WhatsApp Text Formatter &amp; Font Styler — Bold, Italic, Strikethrough &amp; Fancy Fonts" />
+  <meta property="og:description" content="Format WhatsApp messages with bold, italic, strikethrough, monospace, lists and quotes, preview them live, and copy fancy Unicode fonts. Free online tool." />
+  <meta property="og:site_name"   content="WALink Generator" />
+
+  <!-- ── Twitter Card ── -->
+  <meta name="twitter:card"        content="summary" />
+  <meta name="twitter:title"       content="WhatsApp Text Formatter &amp; Font Styler — Bold, Italic, Strikethrough &amp; Fancy Fonts" />
+  <meta name="twitter:description" content="Format WhatsApp messages with bold, italic, strikethrough, monospace, lists and quotes, preview them live, and copy fancy Unicode fonts. Free online tool." />
+
+  <!-- ── Favicon ── -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+
+  <!-- ── Preconnect ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- ── CSS (same style system) ── -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/groups.css" />
+  <link rel="stylesheet" href="css/tools.css" />
+
+  <style>
+    /* additional group-card styling */
+    .groups-hero {
+      background: linear-gradient(125deg, #0D2E24 0%, #1A4A3A 100%);
+      color: white;
+    }
+    .groups-hero .hero-title,
+    .groups-hero .hero-desc {
+      color: white;
+    }
+    .groups-hero .hero-desc {
+      color: rgba(255,255,255,0.85);
+    }
+    .group-category-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+    .groups-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 1rem;
+    }
+    .group-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-light);
+      padding: 1.25rem 1.5rem;
+      transition: all 0.25s ease;
+      box-shadow: var(--shadow-xs);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .group-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--green-primary);
+      box-shadow: var(--shadow-md);
+    }
+    .group-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+    .group-name svg {
+      width: 20px;
+      height: 20px;
+      color: var(--green-primary);
+      flex-shrink: 0;
+    }
+    .group-link {
+      font-size: 0.85rem;
+      color: var(--green-deep);
+      background: var(--green-pale);
+      padding: 0.5rem 0.75rem;
+      border-radius: var(--radius-sm);
+      word-break: break-all;
+      font-family: monospace;
+      margin: 0.75rem 0;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    .group-link a {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .group-link a:hover {
+      text-decoration: underline;
+      color: var(--green-deep);
+    }
+    .join-btn {
+      margin-top: auto;
+      background: var(--green-primary);
+      color: white;
+      padding: 0.6rem 1rem;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    .join-btn:hover {
+      background: var(--green-deep);
+      transform: scale(0.98);
+    }
+    .info-banner {
+      background: var(--green-pale);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem;
+      margin: 2rem 0;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+    .badge-jobs {
+      background: var(--green-light);
+      color: var(--green-deep);
+    }
+    @media (max-width: 640px) {
+      .groups-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "WhatsApp Text Formatter & Font Styler",
+  "url": "https://walinks.github.io/whatsapp-text-formatter",
+  "description": "Format WhatsApp messages with bold, italic, strikethrough, monospace, lists and quotes, preview them live, and copy fancy Unicode fonts. Free online tool.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "WALink Generator",
+    "url": "https://walinks.github.io/"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://walinks.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Text Formatter & Font Styler",
+      "item": "https://walinks.github.io/whatsapp-text-formatter"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the WhatsApp formatting codes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "*bold*, _italic_, ~strikethrough~ and ```monospace```. Lists use * or 1. at the start of a line and quotes use >."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do fancy fonts sometimes show as boxes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Older devices may lack some Unicode characters. Try another style if one doesn't display."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are fancy fonts accessible?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Screen readers may skip or spell out styled characters, so keep essential details in plain text."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my text saved?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Everything stays in your browser tab."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to use the Text Formatter & Font Styler",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Type your message",
+      "text": "Write or paste text into the editor."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Select and style",
+      "text": "Highlight words and tap Bold, Italic, Strike, Monospace, lists or quote."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Copy or send",
+      "text": "Copy the result or open it directly in WhatsApp."
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+<div id="header-root"></div>
+<main id="main-content">
+<section class="hero groups-hero" aria-labelledby="page-title"><div class="container"><div class="hero-inner"><div class="hero-content">
+<div class="hero-badge" role="note"><span class="hero-badge-dot"></span>✍️ Free online tool</div>
+<h1 class="hero-title" id="page-title">WhatsApp Text Formatter <span class="accent">&amp; Font Styler</span><br/>Bold, italic, lists and fancy fonts — previewed before you send</h1><p class="hero-desc">Select text, tap a style and see how it will look in a WhatsApp bubble. Add fancy Unicode fonts for bios and statuses, then copy or send the finished message.</p>
+<div class="hero-actions"><a href="#tool" class="btn btn--primary btn--lg">Open the Tool</a><a href="#how" class="btn btn--outline btn--lg">How It Works</a></div></div></div></div></section>
+<section class="section" id="tool" aria-labelledby="tool-title"><div class="container"><div class="section-header section-header--center" data-reveal><p class="section-label">Use it now</p><h2 class="section-title" id="tool-title">WhatsApp Text Formatter &amp; Font Styler</h2></div><div class="tool-grid">
+<div class="tool-card"><h3>Format your message</h3>
+<div class="chip-row" role="toolbar" aria-label="Formatting">
+<button class="chip-btn" data-act="bold" type="button"><b>Bold</b></button><button class="chip-btn" data-act="italic" type="button"><i>Italic</i></button><button class="chip-btn" data-act="strike" type="button"><s>Strike</s></button><button class="chip-btn" data-act="mono" type="button">Monospace</button><button class="chip-btn" data-act="code" type="button">Code</button><button class="chip-btn" data-act="bullet" type="button">• List</button><button class="chip-btn" data-act="num" type="button">1. List</button><button class="chip-btn" data-act="quote" type="button">&gt; Quote</button></div>
+<label for="tf" class="sr-only">Message</label><textarea id="tf" class="form-control" placeholder="Type or paste your message, select text, then tap a style…"></textarea>
+<p id="cnt" class="form-hint"></p><div class="wa-bubble" id="prev" aria-live="polite"></div>
+<div class="chip-row"><button class="btn btn--primary" id="copyfmt" type="button">Copy message</button><button class="btn btn--outline" id="wa" type="button">Send in WhatsApp</button></div></div>
+<div class="tool-card"><h3>Fancy font styler</h3><label for="fsrc">Text to style</label><input id="fsrc" class="form-control" value="Hello WhatsApp" maxlength="120">
+<div class="style-list" id="styles"></div><p class="form-hint" style="margin-top:10px">Styled text uses Unicode characters, so it works anywhere — but screen readers may not read it well.</p></div></div></div></section>
+<section class="section section--tinted" id="how" aria-labelledby="how-t"><div class="container"><div class="section-header section-header--center" data-reveal><p class="section-label">Simple process</p><h2 class="section-title" id="how-t">How to use it</h2></div><div class="steps-grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))"><div class="step-card card" data-reveal><div class="step-number">1</div><h3 class="step-title">Type your message</h3><p class="step-desc">Write or paste text into the editor.</p></div><div class="step-card card" data-reveal><div class="step-number">2</div><h3 class="step-title">Select and style</h3><p class="step-desc">Highlight words and tap Bold, Italic, Strike, Monospace, lists or quote.</p></div><div class="step-card card" data-reveal><div class="step-number">3</div><h3 class="step-title">Copy or send</h3><p class="step-desc">Copy the result or open it directly in WhatsApp.</p></div></div></div></section>
+<section class="section" aria-labelledby="feat-t"><div class="container"><div class="section-header section-header--center" data-reveal><p class="section-label">Features</p><h2 class="section-title" id="feat-t">Why people use it</h2></div><div class="features-grid"><div class="card feature-card" data-reveal><div class="feature-icon">✅</div><h3 class="feature-title">Live bubble preview</h3><p class="feature-desc">See bold, italic and lists as they will appear in chat.</p></div><div class="card feature-card" data-reveal><div class="feature-icon">⚡</div><h3 class="feature-title">Eight fancy fonts</h3><p class="feature-desc">Bold, italic, script, monospace, circled and more for names and bios.</p></div><div class="card feature-card" data-reveal><div class="feature-icon">📱</div><h3 class="feature-title">Works offline-ish</h3><p class="feature-desc">All processing happens in your browser; nothing is stored.</p></div><div class="card feature-card" data-reveal><div class="feature-icon">🔒</div><h3 class="feature-title">Lists and quotes</h3><p class="feature-desc">Bullets, numbered lists and block quotes in one tap.</p></div></div></div></section>
+<section class="section section--alt" aria-labelledby="ti-t"><div class="container"><div class="media-split"><figure class="media-split-img" data-reveal><img src="img/whatsapp-text-formatter.svg" width="560" height="420" loading="lazy" decoding="async" alt="Illustration of the Text Formatter &amp; Font Styler on a WhatsApp chat screen"></figure><div class="media-split-text" data-reveal><p class="section-label">Good to know</p><h2 class="section-title" id="ti-t">How WhatsApp formatting works</h2><div class="divider"></div><p>WhatsApp turns simple markers into formatting: asterisks make bold, underscores italic, tildes strikethrough and triple backticks monospace. This tool adds those markers around your selection so you don&#x27;t have to remember them.</p><p>Fancy fonts are different: they swap letters for look-alike Unicode characters, so they can be pasted anywhere. They are decorative, so use them sparingly and avoid them for important information.</p></div></div></div></section>
+<section class="section" aria-labelledby="uc-t"><div class="container"><div class="section-header section-header--center" data-reveal><p class="section-label">Use cases</p><h2 class="section-title" id="uc-t">Who it's for</h2></div><div class="features-grid"><div class="card feature-card" data-reveal><div class="feature-icon">✅</div><h3 class="feature-title">Announcements</h3><p class="feature-desc">Make key dates and prices stand out in group or broadcast messages.</p></div><div class="card feature-card" data-reveal><div class="feature-icon">⚡</div><h3 class="feature-title">Profiles &amp; statuses</h3><p class="feature-desc">Style your About text or status with a distinctive font.</p></div><div class="card feature-card" data-reveal><div class="feature-icon">📱</div><h3 class="feature-title">Support replies</h3><p class="feature-desc">Keep saved replies clean and easy to scan.</p></div></div></div></section>
+<section class="section section--alt" aria-labelledby="faq-t"><div class="container"><div class="section-header section-header--center" data-reveal><p class="section-label">FAQs</p><h2 class="section-title" id="faq-t">Frequently asked questions</h2></div><div class="faq-list" style="max-width:860px;margin:0 auto"><div class="faq-item"><button class="faq-q" aria-expanded="false">What are the WhatsApp formatting codes?<span class="faq-icon">+</span></button><div class="faq-a"><p>*bold*, _italic_, ~strikethrough~ and ```monospace```. Lists use * or 1. at the start of a line and quotes use &gt;.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Why do fancy fonts sometimes show as boxes?<span class="faq-icon">+</span></button><div class="faq-a"><p>Older devices may lack some Unicode characters. Try another style if one doesn&#x27;t display.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Are fancy fonts accessible?<span class="faq-icon">+</span></button><div class="faq-a"><p>Screen readers may skip or spell out styled characters, so keep essential details in plain text.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Is my text saved?<span class="faq-icon">+</span></button><div class="faq-a"><p>No. Everything stays in your browser tab.</p></div></div></div></div></section>
+<section class="section" aria-labelledby="rel-t"><div class="container"><div class="section-header section-header--center" data-reveal><p class="section-label">Keep exploring</p><h2 class="section-title" id="rel-t">More free WhatsApp tools</h2></div><div class="related-groups" data-reveal><a href="/whatsapp-chat-button-generator"><span>💬 Chat Button Generator</span></a><a href="/whatsapp-chat-viewer-stats"><span>📊 Chat Viewer &amp; Stats</span></a><a href="/#generator"><span>🔗 WhatsApp Link Generator</span></a><a href="/whatsapp-groups"><span>👥 WhatsApp Groups</span></a></div></div></section>
+</main>
+<div id="footer-root"></div><div id="toast-container" aria-live="polite"></div>
+<button id="back-top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg></button>
+<script src="components/header.js"></script><script src="components/footer.js"></script><script src="js/app.js"></script><script src="js/tools/formatter.js"></script>
+</body></html>

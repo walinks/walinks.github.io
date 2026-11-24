@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JTB3YXT11C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JTB3YXT11C');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── Primary Meta ── -->
+  <title>WhatsApp Chat Button &amp; Widget Generator — Free Floating Button Code</title>
+  <meta name="description" content="Create a floating WhatsApp chat button for your website. Customize color, size, position and message, preview it live and copy the HTML code. Free, no sign-up." />
+  <meta name="keywords" content="whatsapp chat button, whatsapp widget generator, floating whatsapp button html, whatsapp click to chat button code, add whatsapp to website" />
+  <meta name="author" content="WALink Generator" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <link rel="canonical" href="https://walinks.github.io/whatsapp-chat-button-generator" />
+
+  <!-- ── Open Graph ── -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://walinks.github.io/whatsapp-chat-button-generator" />
+  <meta property="og:title"       content="WhatsApp Chat Button &amp; Widget Generator — Free Floating Button Code" />
+  <meta property="og:description" content="Create a floating WhatsApp chat button for your website. Customize color, size, position and message, preview it live and copy the HTML code. Free, no sign-up." />
+  <meta property="og:site_name"   content="WALink Generator" />
+
+  <!-- ── Twitter Card ── -->
+  <meta name="twitter:card"        content="summary" />
+  <meta name="twitter:title"       content="WhatsApp Chat Button &amp; Widget Generator — Free Floating Button Code" />
+  <meta name="twitter:description" content="Create a floating WhatsApp chat button for your website. Customize color, size, position and message, preview it live and copy the HTML code. Free, no sign-up." />
+
+  <!-- ── Favicon ── -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+
+  <!-- ── Preconnect ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- ── CSS (same style system) ── -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/groups.css" />
+  <link rel="stylesheet" href="css/tools.css" />
+
+  <style>
+    /* additional group-card styling */
+    .groups-hero {
+      background: linear-gradient(125deg, #0D2E24 0%, #1A4A3A 100%);
+      color: white;
+    }
+    .groups-hero .hero-title,
+    .groups-hero .hero-desc {
+      color: white;
+    }
+    .groups-hero .hero-desc {
+      color: rgba(255,255,255,0.85);
+    }
+    .group-category-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+    .groups-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 1rem;
+    }
+    .group-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-light);
+      padding: 1.25rem 1.5rem;
+      transition: all 0.25s ease;
+      box-shadow: var(--shadow-xs);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .group-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--green-primary);
+      box-shadow: var(--shadow-md);
+    }
+    .group-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+    .group-name svg {
+      width: 20px;
+      height: 20px;
+      color: var(--green-primary);
+      flex-shrink: 0;
+    }
+    .group-link {
+      font-size: 0.85rem;
+      color: var(--green-deep);
+      background: var(--green-pale);
+      padding: 0.5rem 0.75rem;
+      border-radius: var(--radius-sm);
+      word-break: break-all;
+      font-family: monospace;
+      margin: 0.75rem 0;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    .group-link a {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .group-link a:hover {
+      text-decoration: underline;
+      color: var(--green-deep);
+    }
+    .join-btn {
+      margin-top: auto;
+      background: var(--green-primary);
+      color: white;
+      padding: 0.6rem 1rem;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    .join-btn:hover {
+      background: var(--green-deep);
+      transform: scale(0.98);
+    }
+    .info-banner {
+      background: var(--green-pale);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem;
+      margin: 2rem 0;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+    .badge-jobs {
+      background: var(--green-light);
+      color: var(--green-deep);
+    }
+    @media (max-width: 640px) {
+      .groups-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "WhatsApp Chat Button & Widget Generator",
+  "url": "https://walinks.github.io/whatsapp-chat-button-generator",
+  "description": "Create a floating WhatsApp chat button for your website. Customize color, size, position and message, preview it live and copy the HTML code. Free, no sign-up.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "WALink Generator",
+    "url": "https://walinks.github.io/"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://walinks.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Chat Button Generator",
+      "item": "https://walinks.github.io/whatsapp-chat-button-generator"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is the widget free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The code is yours to use on any site with no limits or fees."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work on WordPress and Shopify?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Paste it into a custom HTML block, your theme footer, or a header/footer code plugin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which phone format should I use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Country code followed by the number, digits only — for example 923001234567. Leave out +, spaces and leading zeros."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I change it later?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Generate new code and replace the old snippet whenever you like."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to use the Chat Button Generator",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Enter your number",
+      "text": "Use the full international number, digits only, plus an optional pre-filled message."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Style the button",
+      "text": "Pick the color, size, shape, text and which corner it sits in."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Copy and paste",
+      "text": "Copy the code and paste it before the closing body tag of your page."
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+<div id="header-root"></div>
+<main id="main-content">
+<section class="hero groups-hero" aria-labelledby="page-title"><div class="container"><div class="hero-inner"><div class="hero-content">
+<div class="hero-badge" role="note"><span class="hero-badge-dot"></span>💬 Free online tool</div>
+<h1 class="hero-title" id="page-title">WhatsApp Chat Button <span class="accent">&amp; Widget Generator</span><br/>Add a floating chat button to any website in a minute</h1><p class="hero-desc">Design a floating WhatsApp button, preview it live, and copy a single snippet of plain HTML. No plugin, no account and no tracking script — just a link styled as a button.</p>
+<div class="hero-actions"><a href="#tool" class="btn btn--primary btn--lg">Open the Tool</a><a href="#how" class="btn btn--outline btn--lg">How It Works</a></div></div></div></div></section>
+<section class="section" id="tool" aria-labelledby="tool-title"><div class="container"><div class="section-header section-header--center" data-reveal><p class="section-label">Use it now</p><h2 class="section-title" id="tool-title">WhatsApp Chat Button &amp; Widget Generator</h2></div><div class="tool-grid">
+<div class="tool-card"><h3>Customize your button</h3>
+<label for="phone">Phone (country code + number)</label><input id="phone" class="form-control" inputmode="tel" value="923001234567" autocomplete="off">
+<label for="msg">Pre-filled message</label><input id="msg" class="form-control" value="Hello! I have a question.">
+<label for="label">Button text (optional)</label><input id="label" class="form-control" value="Chat with us" maxlength="30">
+<div class="row"><div><label for="pos">Position</label><select id="pos" class="form-control"><option value="right">Bottom right</option><option value="left">Bottom left</option></select></div>
+<div><label for="shape">Shape (icon only)</label><select id="shape" class="form-control"><option value="round">Round</option><option value="pill">Pill</option></select></div></div>
+<div class="row"><div><label for="color">Color</label><input id="color" type="color" class="form-control" value="#25D366" style="height:44px;padding:4px"></div>
+<div><label for="size">Size</label><select id="size" class="form-control"><option value="48">Small</option><option value="56" selected>Medium</option><option value="68">Large</option></select></div></div>
+<p id="ok" style="color:#D93025;font-size:.85rem"></p></div>
+<div class="tool-card"><h3>Live preview</h3><div class="tool-preview" id="pv"></div>
+<h3 style="margin-top:18px">Copy-paste code</h3><pre class="tool-out" id="out" tabindex="0"></pre>
+<button class="btn btn--primary" id="copy" type="button">Copy widget code</button></div></div></div></section>
+<section class="section section--tinted" id="how" aria-labelledby="how-t"><div class="container"><div class="section-header section-header--center" data-reveal><p class="section-label">Simple process</p><h2 class="section-title" id="how-t">How to use it</h2></div><div class="steps-grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))"><div class="step-card card" data-reveal><div class="step-number">1</div><h3 class="step-title">Enter your number</h3><p class="step-desc">Use the full international number, digits only, plus an optional pre-filled message.</p></div><div class="step-card card" data-reveal><div class="step-number">2</div><h3 class="step-title">Style the button</h3><p class="step-desc">Pick the color, size, shape, text and which corner it sits in.</p></div><div class="step-card card" data-reveal><div class="step-number">3</div><h3 class="step-title">Copy and paste</h3><p class="step-desc">Copy the code and paste it before the closing body tag of your page.</p></div></div></div></section>
+<section class="section" aria-labelledby="feat-t"><div class="container"><div class="section-header section-header--center" data-reveal><p class="section-label">Features</p><h2 class="section-title" id="feat-t">Why people use it</h2></div><div class="features-grid"><div class="card feature-card" data-reveal><div class="feature-icon">✅</div><h3 class="feature-title">No plugin needed</h3><p class="feature-desc">The widget is one self-contained link, so it won&#x27;t slow your page down.</p></div><div class="card feature-card" data-reveal><div class="feature-icon">⚡</div><h3 class="feature-title">Pre-filled message</h3><p class="feature-desc">Visitors land in a chat with your greeting already typed.</p></div><div class="card feature-card" data-reveal><div class="feature-icon">📱</div><h3 class="feature-title">Mobile friendly</h3><p class="feature-desc">Fixed to a corner and sized for thumbs on small screens.</p></div><div class="card feature-card" data-reveal><div class="feature-icon">🔒</div><h3 class="feature-title">Private</h3><p class="feature-desc">Everything runs in your browser; your number is never sent to us.</p></div></div></div></section>
+<section class="section section--alt" aria-labelledby="ti-t"><div class="container"><div class="media-split"><figure class="media-split-img" data-reveal><img src="img/whatsapp-chat-button-generator.svg" width="560" height="420" loading="lazy" decoding="async" alt="Illustration of the Chat Button Generator on a WhatsApp chat screen"></figure><div class="media-split-text" data-reveal><p class="section-label">Good to know</p><h2 class="section-title" id="ti-t">Why a simple chat button works</h2><div class="divider"></div><p>Visitors rarely fill in contact forms, but almost everyone already has WhatsApp. A floating button stays visible while they scroll, so asking a question takes one tap instead of a form and a wait for email.</p><p>Because this generator outputs a plain wa.me link with inline styles, it works on any platform that accepts HTML. Test it on your phone after pasting, and keep your pre-filled message short and friendly.</p></div></div></div></section>
+<section class="section" aria-labelledby="uc-t"><div class="container"><div class="section-header section-header--center" data-reveal><p class="section-label">Use cases</p><h2 class="section-title" id="uc-t">Who it's for</h2></div><div class="features-grid"><div class="card feature-card" data-reveal><div class="feature-icon">✅</div><h3 class="feature-title">Business sites</h3><p class="feature-desc">Give customers a one-tap way to ask questions or place orders.</p></div><div class="card feature-card" data-reveal><div class="feature-icon">⚡</div><h3 class="feature-title">Portfolios</h3><p class="feature-desc">Let clients message you straight from your freelance site.</p></div><div class="card feature-card" data-reveal><div class="feature-icon">📱</div><h3 class="feature-title">Blogs &amp; shops</h3><p class="feature-desc">Add support to WordPress, Shopify, Blogger or static HTML pages.</p></div></div></div></section>
+<section class="section section--alt" aria-labelledby="faq-t"><div class="container"><div class="section-header section-header--center" data-reveal><p class="section-label">FAQs</p><h2 class="section-title" id="faq-t">Frequently asked questions</h2></div><div class="faq-list" style="max-width:860px;margin:0 auto"><div class="faq-item"><button class="faq-q" aria-expanded="false">Is the widget free?<span class="faq-icon">+</span></button><div class="faq-a"><p>Yes. The code is yours to use on any site with no limits or fees.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Does it work on WordPress and Shopify?<span class="faq-icon">+</span></button><div class="faq-a"><p>Yes. Paste it into a custom HTML block, your theme footer, or a header/footer code plugin.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Which phone format should I use?<span class="faq-icon">+</span></button><div class="faq-a"><p>Country code followed by the number, digits only — for example 923001234567. Leave out +, spaces and leading zeros.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Can I change it later?<span class="faq-icon">+</span></button><div class="faq-a"><p>Generate new code and replace the old snippet whenever you like.</p></div></div></div></div></section>
+<section class="section" aria-labelledby="rel-t"><div class="container"><div class="section-header section-header--center" data-reveal><p class="section-label">Keep exploring</p><h2 class="section-title" id="rel-t">More free WhatsApp tools</h2></div><div class="related-groups" data-reveal><a href="/whatsapp-text-formatter"><span>✍️ Text Formatter &amp; Font Styler</span></a><a href="/whatsapp-chat-viewer-stats"><span>📊 Chat Viewer &amp; Stats</span></a><a href="/#generator"><span>🔗 WhatsApp Link Generator</span></a><a href="/whatsapp-groups"><span>👥 WhatsApp Groups</span></a></div></div></section>
+</main>
+<div id="footer-root"></div><div id="toast-container" aria-live="polite"></div>
+<button id="back-top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg></button>
+<script src="components/header.js"></script><script src="components/footer.js"></script><script src="js/app.js"></script><script src="js/tools/button.js"></script>
+</body></html>

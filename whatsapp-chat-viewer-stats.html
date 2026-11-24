@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JTB3YXT11C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JTB3YXT11C');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── Primary Meta ── -->
+  <title>WhatsApp Chat Viewer &amp; Stats Reader — Analyze Exported .txt Chats Privately</title>
+  <meta name="description" content="Open a WhatsApp exported chat .txt file in your browser, search messages and see stats: top senders, words, emojis and busiest hours. Private, nothing uploaded." />
+  <meta name="keywords" content="whatsapp chat viewer, whatsapp chat analyzer, whatsapp export txt reader, whatsapp chat statistics, whatsapp chat export viewer" />
+  <meta name="author" content="WALink Generator" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <link rel="canonical" href="https://walinks.github.io/whatsapp-chat-viewer-stats" />
+
+  <!-- ── Open Graph ── -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://walinks.github.io/whatsapp-chat-viewer-stats" />
+  <meta property="og:title"       content="WhatsApp Chat Viewer &amp; Stats Reader — Analyze Exported .txt Chats Privately" />
+  <meta property="og:description" content="Open a WhatsApp exported chat .txt file in your browser, search messages and see stats: top senders, words, emojis and busiest hours. Private, nothing uploaded." />
+  <meta property="og:site_name"   content="WALink Generator" />
+
+  <!-- ── Twitter Card ── -->
+  <meta name="twitter:card"        content="summary" />
+  <meta name="twitter:title"       content="WhatsApp Chat Viewer &amp; Stats Reader — Analyze Exported .txt Chats Privately" />
+  <meta name="twitter:description" content="Open a WhatsApp exported chat .txt file in your browser, search messages and see stats: top senders, words, emojis and busiest hours. Private, nothing uploaded." />
+
+  <!-- ── Favicon ── -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+
+  <!-- ── Preconnect ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- ── CSS (same style system) ── -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/groups.css" />
+  <link rel="stylesheet" href="css/tools.css" />
+
+  <style>
+    /* additional group-card styling */
+    .groups-hero {
+      background: linear-gradient(125deg, #0D2E24 0%, #1A4A3A 100%);
+      color: white;
+    }
+    .groups-hero .hero-title,
+    .groups-hero .hero-desc {
+      color: white;
+    }
+    .groups-hero .hero-desc {
+      color: rgba(255,255,255,0.85);
+    }
+    .group-category-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+    .groups-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 1rem;
+    }
+    .group-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-light);
+      padding: 1.25rem 1.5rem;
+      transition: all 0.25s ease;
+      box-shadow: var(--shadow-xs);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .group-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--green-primary);
+      box-shadow: var(--shadow-md);
+    }
+    .group-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+    .group-name svg {
+      width: 20px;
+      height: 20px;
+      color: var(--green-primary);
+      flex-shrink: 0;
+    }
+    .group-link {
+      font-size: 0.85rem;
+      color: var(--green-deep);
+      background: var(--green-pale);
+      padding: 0.5rem 0.75rem;
+      border-radius: var(--radius-sm);
+      word-break: break-all;
+      font-family: monospace;
+      margin: 0.75rem 0;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    .group-link a {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .group-link a:hover {
+      text-decoration: underline;
+      color: var(--green-deep);
+    }
+    .join-btn {
+      margin-top: auto;
+      background: var(--green-primary);
+      color: white;
+      padding: 0.6rem 1rem;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    .join-btn:hover {
+      background: var(--green-deep);
+      transform: scale(0.98);
+    }
+    .info-banner {
+      background: var(--green-pale);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem;
+      margin: 2rem 0;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+    .badge-jobs {
+      background: var(--green-light);
+      color: var(--green-deep);
+    }
+    @media (max-width: 640px) {
+      .groups-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "WhatsApp Chat Export (.txt) Viewer & Stats Reader",
+  "url": "https://walinks.github.io/whatsapp-chat-viewer-stats",
+  "description": "Open a WhatsApp exported chat .txt file in your browser, search messages and see stats: top senders, words, emojis and busiest hours. Private, nothing uploaded.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "WALink Generator",
+    "url": "https://walinks.github.io/"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://walinks.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Chat Viewer & Stats",
+      "item": "https://walinks.github.io/whatsapp-chat-viewer-stats"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I export a WhatsApp chat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open the chat, tap the menu, choose More → Export chat, then Without media, and save the .txt file."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my chat uploaded anywhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The file is read entirely in your browser."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which formats are supported?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Android and iPhone exports in 12-hour and 24-hour time. Unusual regional formats may not parse."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is a count different from WhatsApp?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "System notices and unparsable lines are skipped, so totals can differ slightly."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to use the Chat Viewer & Stats",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Export the chat",
+      "text": "In WhatsApp open the chat, choose Export chat and pick Without media."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Open the .txt file",
+      "text": "Drop it onto the box or choose it from your files."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Explore the stats",
+      "text": "Browse charts, search messages and filter by person."
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+<div id="header-root"></div>
+<main id="main-content">
+<section class="hero groups-hero" aria-labelledby="page-title"><div class="container"><div class="hero-inner"><div class="hero-content">
+<div class="hero-badge" role="note"><span class="hero-badge-dot"></span>📊 Free online tool</div>
+<h1 class="hero-title" id="page-title">WhatsApp Chat Export <span class="accent">Viewer &amp; Stats Reader</span><br/>Read, search and analyze an exported chat — privately</h1><p class="hero-desc">Export a chat from WhatsApp, drop the .txt file here and get a readable conversation plus statistics. The file is processed in your browser and never leaves your device.</p>
+<div class="hero-actions"><a href="#tool" class="btn btn--primary btn--lg">Open the Tool</a><a href="#how" class="btn btn--outline btn--lg">How It Works</a></div></div></div></div></section>
+<section class="section" id="tool" aria-labelledby="tool-title"><div class="container"><div class="section-header section-header--center" data-reveal><p class="section-label">Use it now</p><h2 class="section-title" id="tool-title">WhatsApp Chat Export (.txt) Viewer &amp; Stats Reader</h2></div><div class="tool-card"><div class="drop" id="drop"><p><b>Drop your exported chat .txt here</b> or choose a file</p>
+<input type="file" id="file" accept=".txt,text/plain" aria-label="Choose exported chat file"><p class="form-hint">Your file is read in your browser and never uploaded.</p></div>
+<p id="err" style="color:#D93025" role="alert"></p>
+<div id="res" hidden><div class="stat-cards" id="cards"></div><p id="s-top"></p>
+<div class="tool-grid"><div><h3>Messages per person</h3><div id="s-by"></div><h3>Top words</h3><div id="s-w"></div><h3>Top emojis</h3><div id="s-e"></div></div>
+<div><h3>Activity by hour</h3><div id="s-h"></div><h3>Activity by weekday</h3><div id="s-d"></div></div></div>
+<h3 style="margin-top:22px">Read &amp; search the chat</h3><div class="row"><input id="q" class="form-control" type="search" placeholder="Search messages…" aria-label="Search messages"><select id="who" class="form-control" aria-label="Filter by participant"></select></div>
+<p id="lc" class="form-hint"></p><div class="chat-log" id="log"></div><button class="btn btn--outline" id="more" type="button" hidden style="margin-top:10px">Show more</button></div></div></div></section>
+<section class="section section--tinted" id="how" aria-labelledby="how-t"><div class="container"><div class="section-header section-header--center" data-reveal><p class="section-label">Simple process</p><h2 class="section-title" id="how-t">How to use it</h2></div><div class="steps-grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))"><div class="step-card card" data-reveal><div class="step-number">1</div><h3 class="step-title">Export the chat</h3><p class="step-desc">In WhatsApp open the chat, choose Export chat and pick Without media.</p></div><div class="step-card card" data-reveal><div class="step-number">2</div><h3 class="step-title">Open the .txt file</h3><p class="step-desc">Drop it onto the box or choose it from your files.</p></div><div class="step-card card" data-reveal><div class="step-number">3</div><h3 class="step-title">Explore the stats</h3><p class="step-desc">Browse charts, search messages and filter by person.</p></div></div></div></section>
+<section class="section" aria-labelledby="feat-t"><div class="container"><div class="section-header section-header--center" data-reveal><p class="section-label">Features</p><h2 class="section-title" id="feat-t">Why people use it</h2></div><div class="features-grid"><div class="card feature-card" data-reveal><div class="feature-icon">✅</div><h3 class="feature-title">Private by design</h3><p class="feature-desc">The file is read locally. There is no upload and no server copy.</p></div><div class="card feature-card" data-reveal><div class="feature-icon">⚡</div><h3 class="feature-title">Activity charts</h3><p class="feature-desc">Messages by person, hour of day and weekday.</p></div><div class="card feature-card" data-reveal><div class="feature-icon">📱</div><h3 class="feature-title">Words and emojis</h3><p class="feature-desc">Most used words and emojis, with common filler words removed.</p></div><div class="card feature-card" data-reveal><div class="feature-icon">🔒</div><h3 class="feature-title">Search and filter</h3><p class="feature-desc">Find any message or view a single participant&#x27;s lines.</p></div></div></div></section>
+<section class="section section--alt" aria-labelledby="ti-t"><div class="container"><div class="media-split"><figure class="media-split-img" data-reveal><img src="img/whatsapp-chat-viewer-stats.svg" width="560" height="420" loading="lazy" decoding="async" alt="Illustration of the Chat Viewer &amp; Stats on a WhatsApp chat screen"></figure><div class="media-split-text" data-reveal><p class="section-label">Good to know</p><h2 class="section-title" id="ti-t">Understand your conversations</h2><div class="divider"></div><p>WhatsApp&#x27;s export is a plain text file with one line per message. This reader parses those lines, joins multi-line messages and handles both 12-hour and 24-hour exports, then turns them into charts you can scan in seconds.</p><p>Because chats are personal, nothing is uploaded. Close the tab and the data is gone. Date formats differ by region, so weekday charts are best-effort when a chat&#x27;s day and month order is ambiguous.</p></div></div></div></section>
+<section class="section" aria-labelledby="uc-t"><div class="container"><div class="section-header section-header--center" data-reveal><p class="section-label">Use cases</p><h2 class="section-title" id="uc-t">Who it's for</h2></div><div class="features-grid"><div class="card feature-card" data-reveal><div class="feature-icon">✅</div><h3 class="feature-title">Back up and review</h3><p class="feature-desc">Read an old exported chat without scrolling through WhatsApp.</p></div><div class="card feature-card" data-reveal><div class="feature-icon">⚡</div><h3 class="feature-title">Group insights</h3><p class="feature-desc">See who is most active and when the group is busiest.</p></div><div class="card feature-card" data-reveal><div class="feature-icon">📱</div><h3 class="feature-title">Find a message</h3><p class="feature-desc">Search years of text for a link, date or phrase.</p></div></div></div></section>
+<section class="section section--alt" aria-labelledby="faq-t"><div class="container"><div class="section-header section-header--center" data-reveal><p class="section-label">FAQs</p><h2 class="section-title" id="faq-t">Frequently asked questions</h2></div><div class="faq-list" style="max-width:860px;margin:0 auto"><div class="faq-item"><button class="faq-q" aria-expanded="false">How do I export a WhatsApp chat?<span class="faq-icon">+</span></button><div class="faq-a"><p>Open the chat, tap the menu, choose More → Export chat, then Without media, and save the .txt file.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Is my chat uploaded anywhere?<span class="faq-icon">+</span></button><div class="faq-a"><p>No. The file is read entirely in your browser.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Which formats are supported?<span class="faq-icon">+</span></button><div class="faq-a"><p>Android and iPhone exports in 12-hour and 24-hour time. Unusual regional formats may not parse.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Why is a count different from WhatsApp?<span class="faq-icon">+</span></button><div class="faq-a"><p>System notices and unparsable lines are skipped, so totals can differ slightly.</p></div></div></div></div></section>
+<section class="section" aria-labelledby="rel-t"><div class="container"><div class="section-header section-header--center" data-reveal><p class="section-label">Keep exploring</p><h2 class="section-title" id="rel-t">More free WhatsApp tools</h2></div><div class="related-groups" data-reveal><a href="/whatsapp-chat-button-generator"><span>💬 Chat Button Generator</span></a><a href="/whatsapp-text-formatter"><span>✍️ Text Formatter &amp; Font Styler</span></a><a href="/#generator"><span>🔗 WhatsApp Link Generator</span></a><a href="/whatsapp-groups"><span>👥 WhatsApp Groups</span></a></div></div></section>
+</main>
+<div id="footer-root"></div><div id="toast-container" aria-live="polite"></div>
+<button id="back-top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg></button>
+<script src="components/header.js"></script><script src="components/footer.js"></script><script src="js/app.js"></script><script src="js/tools/viewer.js"></script>
+</body></html>

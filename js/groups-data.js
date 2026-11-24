@@ -37,7 +37,7 @@ window.WA_GROUPS = {
    "cat": "all"
   },
   {
-   "name": "Mᴏᴠɪᴇs & Wᴇʙ-Sᴇʀɪᴇs",
+   "name": "Movies & Web-Series",
    "link": "https://chat.whatsapp.com/BQmsCr24QEELXBESwSZPfJ",
    "cat": "web"
   },
@@ -82,7 +82,7 @@ window.WA_GROUPS = {
    "cat": "all"
   },
   {
-   "name": "ÃLL Møvîê'& Wéb SSêrïés",
+   "name": "All Movies & Web Series",
    "link": "https://chat.whatsapp.com/IH5Hyv7YLibAWkZXfqo6At",
    "cat": "web"
   },
@@ -97,19 +97,9 @@ window.WA_GROUPS = {
    "cat": "all"
   },
   {
-   "name": "Qureshi Movieflixs",
-   "link": "https://chat.whatsapp.com/HFzSfVuSHdj1gSYBFVzgb0",
-   "cat": "all"
-  },
-  {
    "name": "Movies/Sci-fi",
    "link": "https://chat.whatsapp.com/IXDW3091kw6JGyzwbT4e59",
    "cat": "hollywood"
-  },
-  {
-   "name": "Pirate Flix Movies",
-   "link": "https://chat.whatsapp.com/KYJCRb3afEz20XEPNdJwcM",
-   "cat": "all"
   },
   {
    "name": "Movies Hub",
@@ -139,11 +129,6 @@ window.WA_GROUPS = {
   {
    "name": "Movies Old & New",
    "link": "https://chat.whatsapp.com/HmJTBURSLyIF4JTfBkYWc6",
-   "cat": "all"
-  },
-  {
-   "name": "Movie House 294",
-   "link": "https://chat.whatsapp.com/Eg2y3aMHlA9DDnuqMdlp2R",
    "cat": "all"
   },
   {
@@ -227,11 +212,6 @@ window.WA_GROUPS = {
    "cat": "all"
   },
   {
-   "name": "Movies Downloader",
-   "link": "https://chat.whatsapp.com/JPfItDbq5vKCIj9QO49HqD",
-   "cat": "all"
-  },
-  {
    "name": "South Hindi Movies",
    "link": "https://chat.whatsapp.com/HEdJwKorNLNJkE3DVnoOVw",
    "cat": "south"
@@ -240,11 +220,6 @@ window.WA_GROUPS = {
    "name": "Hollywood",
    "link": "https://chat.whatsapp.com/KeqeIfz7LZRBejPXV47XFF",
    "cat": "hollywood"
-  },
-  {
-   "name": "HB Movies",
-   "link": "https://chat.whatsapp.com/LNSCpQoboXt0orXrLkJgFp",
-   "cat": "all"
   },
   {
    "name": "Hollywood Movie Download",
@@ -257,38 +232,8 @@ window.WA_GROUPS = {
    "cat": "all"
   },
   {
-   "name": "Dead for a Dollar",
-   "link": "https://chat.whatsapp.com/KY3QeueVwTwLBOJ6QvMUxe",
-   "cat": "hollywood"
-  },
-  {
-   "name": "Hell Hath No Fury",
-   "link": "https://chat.whatsapp.com/EIt6NSqexxEJvrvKmKjZzT",
-   "cat": "hollywood"
-  },
-  {
-   "name": "Short Film Artist",
-   "link": "https://chat.whatsapp.com/GdrWd2kGXJQ7KttG5iGQSo",
-   "cat": "all"
-  },
-  {
    "name": "Families Movies Only",
    "link": "https://chat.whatsapp.com/Hwb04ufpjPNClEKURf7ouN",
-   "cat": "all"
-  },
-  {
-   "name": "Terabox Movie Link",
-   "link": "https://chat.whatsapp.com/JYsB7ZULnIPE4Xz4IOgzL1",
-   "cat": "all"
-  },
-  {
-   "name": "ipopkorn Movies",
-   "link": "https://chat.whatsapp.com/IipY5ibaqNpHmmm7CRVDYc",
-   "cat": "all"
-  },
-  {
-   "name": "Free Trail Movies",
-   "link": "https://chat.whatsapp.com/HP4jTALug4KGUKVsWN9oHm",
    "cat": "all"
   },
   {
@@ -302,14 +247,14 @@ window.WA_GROUPS = {
    "cat": "web"
   },
   {
-   "name": "BEST AKILA FLIM",
-   "link": "https://chat.whatsapp.com/KFIpFVA01zbHlbCvFLCuvT",
-   "cat": "all"
-  },
-  {
    "name": "Enjoy Movies",
    "link": "https://chat.whatsapp.com/DQWBamS362CITW1zMseAM6",
    "cat": "all"
+  },
+  {
+   "name": "Movie Hub — Bollywood & Hollywood",
+   "link": "https://chat.whatsapp.com/EMrMzKoj0EPIkPbZTORYGH",
+   "cat": "bollywood"
   }
  ],
  "entertainment": [
@@ -334,11 +279,6 @@ window.WA_GROUPS = {
    "cat": "funny"
   },
   {
-   "name": "Funny Group Admin",
-   "link": "https://chat.whatsapp.com/EoxpxboLtab6UAZ9mGbHlQ",
-   "cat": "funny"
-  },
-  {
    "name": "Funny videos",
    "link": "https://chat.whatsapp.com/IM1ibtWI6uj37EBzSUaFuu",
    "cat": "funny"
@@ -346,11 +286,6 @@ window.WA_GROUPS = {
   {
    "name": "FUNNY VIDEOS",
    "link": "https://chat.whatsapp.com/KGZl6HVGw6x6aOu5Ws8Uh2",
-   "cat": "funny"
-  },
-  {
-   "name": "Funny Group Description",
-   "link": "https://chat.whatsapp.com/As5HXoQCMzg4csHsTwlXiJ",
    "cat": "funny"
   },
   {
@@ -374,11 +309,6 @@ window.WA_GROUPS = {
    "cat": "funny"
   },
   {
-   "name": "The Cesspit",
-   "link": "https://chat.whatsapp.com/GxEjekr3zU01zg7n3F8hq2",
-   "cat": "funny"
-  },
-  {
    "name": "Desi Funny Videos",
    "link": "https://chat.whatsapp.com/GP3xAYhG2gsGATT18V5hgx",
    "cat": "funny"
@@ -394,11 +324,6 @@ window.WA_GROUPS = {
    "cat": "entertainment"
   },
   {
-   "name": "Pakistan horse Naza Bazi",
-   "link": "https://chat.whatsapp.com/GD1gBak3ZWJ83CP0lrWWwZ",
-   "cat": "entertainment"
-  },
-  {
    "name": "Entertainment",
    "link": "https://chat.whatsapp.com/B9G5pS2UC6xETnboCSjmIX",
    "cat": "entertainment"
@@ -409,18 +334,8 @@ window.WA_GROUPS = {
    "cat": "entertainment"
   },
   {
-   "name": "Rooh -e- Hayat",
-   "link": "https://chat.whatsapp.com/JPwSPgnsifwH5KRlS79o1W",
-   "cat": "entertainment"
-  },
-  {
    "name": "Memes point",
    "link": "https://chat.whatsapp.com/Dgith3ZUsBx0mY5lA6TLmJ",
-   "cat": "entertainment"
-  },
-  {
-   "name": "GËÖ $ÔLÅÑGÎ",
-   "link": "https://chat.whatsapp.com/Gasqdr09xPULaAZzrJ5ZvW",
    "cat": "entertainment"
   },
   {
@@ -434,18 +349,13 @@ window.WA_GROUPS = {
    "cat": "entertainment"
   },
   {
-   "name": "Funy Video",
+   "name": "Funny Video",
    "link": "https://chat.whatsapp.com/IaiEsmWQ9JMF7paGemNBu6",
    "cat": "funny"
   },
   {
    "name": "Full Entertainment Zone",
    "link": "https://chat.whatsapp.com/FKmLFKtQ2r0GdNGk1GSHlx",
-   "cat": "entertainment"
-  },
-  {
-   "name": "Sufian Entertainment",
-   "link": "https://chat.whatsapp.com/CRQ5Ifudtf7AkU24asyeof",
    "cat": "entertainment"
   },
   {
@@ -504,12 +414,12 @@ window.WA_GROUPS = {
    "cat": "anime"
   },
   {
-   "name": "Anime , musica y memes",
+   "name": "Anime, Musica y Memes",
    "link": "https://chat.whatsapp.com/0hMGTHZxasaGFu3iOozhWO",
    "cat": "anime"
   },
   {
-   "name": "Kurulus osman",
+   "name": "Kurulus Osman",
    "link": "https://chat.whatsapp.com/I4xFW5UYWyU750H3wWB84N",
    "cat": "anime"
   },
@@ -529,14 +439,24 @@ window.WA_GROUPS = {
    "cat": "funny"
   },
   {
-   "name": "KMW Entertainment",
-   "link": "https://chat.whatsapp.com/GKeNQz9jXIC80FoHF410CM",
-   "cat": "entertainment"
+   "name": "Dancing Meme & Funny Jokes",
+   "link": "https://chat.whatsapp.com/CXB4lnsS5kMHBlCqeXc3G4",
+   "cat": "funny"
   },
   {
-   "name": "Entertainment by Imran Mani",
-   "link": "https://chat.whatsapp.com/DWEiK9AsPOqCwKKf4l3UqN",
-   "cat": "entertainment"
+   "name": "Funny Videos & Memes Hub",
+   "link": "https://chat.whatsapp.com/D15AOlHfzI1FBETQiagRAt",
+   "cat": "funny"
+  },
+  {
+   "name": "Anime Meme Society & Fun Chat",
+   "link": "https://chat.whatsapp.com/Ikz7RAZyzziB47ubLS8II2",
+   "cat": "anime"
+  },
+  {
+   "name": "Anime & Manga Fun Lounge",
+   "link": "https://chat.whatsapp.com/CrrKHWChKEw9ezlSslBK6M",
+   "cat": "anime"
   }
  ],
  "friendship": [
@@ -606,11 +526,6 @@ window.WA_GROUPS = {
    "cat": "all"
   },
   {
-   "name": "Madhumakshika",
-   "link": "https://chat.whatsapp.com/I9ddGKGScCVFRAqUUOIyAz",
-   "cat": "all"
-  },
-  {
    "name": "Glocal Connects",
    "link": "https://chat.whatsapp.com/ESnhWdz4TTL5d9S6VDfEGJ",
    "cat": "all"
@@ -636,11 +551,6 @@ window.WA_GROUPS = {
    "cat": "all"
   },
   {
-   "name": "Dating and Friendship",
-   "link": "https://chat.whatsapp.com/FZFp3r8dpCdEmNZAnTPP1V",
-   "cat": "all"
-  },
-  {
    "name": "American Friendship",
    "link": "https://chat.whatsapp.com/EOBaox2SO21GYjWUwC8sc3",
    "cat": "all"
@@ -648,16 +558,6 @@ window.WA_GROUPS = {
   {
    "name": "India Friends",
    "link": "https://chat.whatsapp.com/HXYrLDxznt2LxSgkwEoCFm",
-   "cat": "all"
-  },
-  {
-   "name": "Aunty Friendship",
-   "link": "https://chat.whatsapp.com/IveB5yWRNwOIcDfNyKpCAw",
-   "cat": "all"
-  },
-  {
-   "name": "USA Girls Boys Friendship",
-   "link": "https://chat.whatsapp.com/DKiken7kZ4f6jSrqpxROiO",
    "cat": "all"
   },
   {
@@ -718,6 +618,16 @@ window.WA_GROUPS = {
   {
    "name": "Chat With Friends",
    "link": "https://chat.whatsapp.com/LLfxnQ6vnw083hWESHK9Ao",
+   "cat": "all"
+  },
+  {
+   "name": "Global Friends & Daily Chat",
+   "link": "https://chat.whatsapp.com/invite/EtUznVtEokv16H7FjXIXTZ",
+   "cat": "all"
+  },
+  {
+   "name": "Friendly Hangout & Social Lounge",
+   "link": "https://chat.whatsapp.com/invite/1MDFuYIghptLUqEvYREzXN",
    "cat": "all"
   }
  ],
@@ -870,11 +780,6 @@ window.WA_GROUPS = {
   {
    "name": "Dubai Jobs Update",
    "link": "https://chat.whatsapp.com/LwKyLdvoeqk61r4ErxusLX",
-   "cat": "gulf"
-  },
-  {
-   "name": "UAE Jobs 2025",
-   "link": "https://chat.whatsapp.com/83bTVcd62A2EvNtsE9urqz",
    "cat": "gulf"
   },
   {
@@ -1092,11 +997,6 @@ window.WA_GROUPS = {
    "cat": "gulf"
   },
   {
-   "name": "UAE Jobs 2025",
-   "link": "https://chat.whatsapp.com/83bTVcd62A2EvNtsE9urqz",
-   "cat": "gulf"
-  },
-  {
    "name": "Dubai New Jobs",
    "link": "https://chat.whatsapp.com/KrlFO2JX2y95vXtyTMQt53",
    "cat": "gulf"
@@ -1181,11 +1081,6 @@ window.WA_GROUPS = {
    "cat": "funny"
   },
   {
-   "name": "Funny Group Admin",
-   "link": "https://chat.whatsapp.com/EoxpxboLtab6UAZ9mGbHlQ",
-   "cat": "funny"
-  },
-  {
    "name": "Funny videos",
    "link": "https://chat.whatsapp.com/IM1ibtWI6uj37EBzSUaFuu",
    "cat": "funny"
@@ -1193,11 +1088,6 @@ window.WA_GROUPS = {
   {
    "name": "FUNNY VIDEOS",
    "link": "https://chat.whatsapp.com/KGZl6HVGw6x6aOu5Ws8Uh2",
-   "cat": "funny"
-  },
-  {
-   "name": "Funny Group Description",
-   "link": "https://chat.whatsapp.com/As5HXoQCMzg4csHsTwlXiJ",
    "cat": "funny"
   },
   {
@@ -1221,11 +1111,6 @@ window.WA_GROUPS = {
    "cat": "funny"
   },
   {
-   "name": "The Cesspit",
-   "link": "https://chat.whatsapp.com/GxEjekr3zU01zg7n3F8hq2",
-   "cat": "funny"
-  },
-  {
    "name": "Desi Funny Videos",
    "link": "https://chat.whatsapp.com/GP3xAYhG2gsGATT18V5hgx",
    "cat": "funny"
@@ -1236,7 +1121,7 @@ window.WA_GROUPS = {
    "cat": "funny"
   },
   {
-   "name": "Funy Video",
+   "name": "Funny Video",
    "link": "https://chat.whatsapp.com/IaiEsmWQ9JMF7paGemNBu6",
    "cat": "funny"
   },
@@ -1249,6 +1134,16 @@ window.WA_GROUPS = {
    "name": "MASTI GROUP INDIA",
    "link": "https://chat.whatsapp.com/E802bnY4WLT1ZzfCpwkbzB",
    "cat": "funny"
+  },
+  {
+   "name": "Dancing Meme & Funny Jokes",
+   "link": "https://chat.whatsapp.com/CXB4lnsS5kMHBlCqeXc3G4",
+   "cat": "funny"
+  },
+  {
+   "name": "Funny Videos & Memes Hub",
+   "link": "https://chat.whatsapp.com/D15AOlHfzI1FBETQiagRAt",
+   "cat": "funny"
   }
  ],
  "netflix-web-series": [
@@ -1258,12 +1153,12 @@ window.WA_GROUPS = {
    "cat": "web"
   },
   {
-   "name": "Mᴏᴠɪᴇs & Wᴇʙ-Sᴇʀɪᴇs",
+   "name": "Movies & Web-Series",
    "link": "https://chat.whatsapp.com/BQmsCr24QEELXBESwSZPfJ",
    "cat": "web"
   },
   {
-   "name": "ÃLL Møvîê'& Wéb SSêrïés",
+   "name": "All Movies & Web Series",
    "link": "https://chat.whatsapp.com/IH5Hyv7YLibAWkZXfqo6At",
    "cat": "web"
   },

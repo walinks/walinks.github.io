@@ -737,6 +737,65 @@
 <script src="js/groups-data.js"></script>
 <script src="js/groups.js"></script>
 
+<script>
+  (function () {
+    const friendshipGroups = [
+      {
+        name: "Global Friends & Daily Chat 🌍",
+        url: "https://chat.whatsapp.com/invite/EtUznVtEokv16H7FjXIXTZ"
+      },
+      {
+        name: "Friendly Hangout & Social Lounge 🤝",
+        url: "https://chat.whatsapp.com/invite/1MDFuYIghptLUqEvYREzXN"
+      },
+      {
+        name: "International Chat & Chill Hub 💬",
+        url: "https://chat.whatsapp.com/CXB4lnsS5kMHBlCqeXc3G4"
+      },
+      {
+        name: "Make New Friends Worldwide 🌟",
+        url: "https://chat.whatsapp.com/D15AOlHfzI1FBETQiagRAt"
+      },
+      {
+        name: "24/7 Friendly Talk & Good Vibes 😊",
+        url: "https://chat.whatsapp.com/EMrMzKoj0EPIkPbZTORYGH"
+      },
+      {
+        name: "Social Circle & Casual Chat Room 👥",
+        url: "https://chat.whatsapp.com/Ikz7RAZyzziB47ubLS8II2"
+      }
+    ];
+
+    const grid = document.getElementById("friendship-groups-grid");
+
+    function renderFriendshipFallback() {
+      if (!grid || grid.children.length > 0) return;
+      const ctaLabel = grid.getAttribute("data-cta") || "Join Group on WhatsApp";
+
+      grid.innerHTML = friendshipGroups.map(group => `
+        <div class="group-card">
+          <div class="group-name">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span>${group.name}</span>
+          </div>
+          <div class="group-link">
+            <a href="${group.url}" target="_blank" rel="noopener noreferrer">${group.url}</a>
+          </div>
+          <a href="${group.url}" target="_blank" rel="noopener noreferrer" class="join-btn">${ctaLabel}</a>
+        </div>
+      `).join("");
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      setTimeout(renderFriendshipFallback, 120);
+    });
+    window.addEventListener("load", () => {
+      setTimeout(renderFriendshipFallback, 200);
+    });
+  })();
+</script>
 
 <style>
   .site-header {

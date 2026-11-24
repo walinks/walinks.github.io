@@ -9,7 +9,7 @@
 (function () {
   'use strict';
 
-  const INVITE_RE = /^https:\/\/(chat\.whatsapp\.com\/[A-Za-z0-9]{10,}|www\.whatsapp\.com\/channel\/[A-Za-z0-9]+)$/;
+  const INVITE_RE = /^https:\/\/(chat\.whatsapp\.com\/(?:invite\/)?[A-Za-z0-9_-]{8,}|www\.whatsapp\.com\/channel\/[A-Za-z0-9_-]+)$/;
   const ICON_USERS = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>';
   const ICON_PLUS  = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>';
   const ICON_COPY  = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>';
@@ -34,20 +34,22 @@
   }
 
   function card(g, cta) {
+    const cleanUrl = String(g.link || '').trim();
     const name = g.name.length > 45 ? g.name.slice(0, 45) + '…' : g.name;
-    const short = g.link.replace('https://', '');
+    const short = cleanUrl.replace('https://', '');
     return `
       <div class="group-card" data-name="${esc(g.name.toLowerCase())}">
         <div class="group-name">${ICON_USERS}<span>${esc(name)}</span></div>
-        <div class="group-link"><a href="${esc(g.link)}" target="_blank" rel="noopener noreferrer nofollow">${esc(short.length > 40 ? short.slice(0, 40) + '…' : short)}</a></div>
-        <a class="join-btn" href="${esc(g.link)}" target="_blank" rel="noopener noreferrer nofollow">${ICON_PLUS}${esc(cta)}</a>
-        <button type="button" class="copy-link-btn" data-link="${esc(g.link)}" aria-label="Copy invite link for ${esc(g.name)}">${ICON_COPY} Copy link</button>
+        <div class="group-link"><a href="${esc(cleanUrl)}" target="_blank" rel="noopener noreferrer nofollow">${esc(short.length > 40 ? short.slice(0, 40) + '…' : short)}</a></div>
+        <a class="join-btn" href="${esc(cleanUrl)}" target="_blank" rel="noopener noreferrer nofollow">${ICON_PLUS}${esc(cta)}</a>
+        <button type="button" class="copy-link-btn" data-link="${esc(cleanUrl)}" aria-label="Copy invite link for ${esc(g.name)}">${ICON_COPY} Copy link</button>
       </div>`;
   }
 
   function mount(grid) {
     const key = grid.dataset.groups;
-    const all = ((window.WA_GROUPS || {})[key] || []).filter(g => INVITE_RE.test(g.link));
+    const rawList = ((window.WA_GROUPS || {})[key] || []);
+    const all = rawList.filter(g => g && typeof g.link === 'string' && INVITE_RE.test(g.link.trim()));
     const cta = grid.dataset.cta || 'Join Group on WhatsApp';
     const catFilter = grid.dataset.catGroup;            // optional fixed category for titled blocks
     let list = catFilter ? all.filter(g => g.cat === catFilter) : all;

@@ -813,6 +813,100 @@
 <script src="js/groups-data.js"></script>
 <script src="js/groups.js"></script>
 
+<script>
+  (function () {
+    const curatedGroups = [
+      {
+        name: "Dancing Meme & Funny Jokes 😂",
+        category: "funny",
+        url: "https://chat.whatsapp.com/CXB4lnsS5kMHBlCqeXc3G4"
+      },
+      {
+        name: "Bahut Hi Funny Masti Club 🤣",
+        category: "funny",
+        url: "https://chat.whatsapp.com/invite/EtUznVtEokv16H7FjXIXTZ"
+      },
+      {
+        name: "Masti All Time Fun Zone 🎉",
+        category: "entertainment",
+        url: "https://chat.whatsapp.com/invite/1MDFuYIghptLUqEvYREzXN"
+      },
+      {
+        name: "Funny Videos & Memes Hub 🎬",
+        category: "funny",
+        url: "https://chat.whatsapp.com/D15AOlHfzI1FBETQiagRAt"
+      },
+      {
+        name: "Movie Hub — Bollywood & Hollywood 🍿",
+        category: "movies",
+        url: "https://chat.whatsapp.com/EMrMzKoj0EPIkPbZTORYGH"
+      },
+      {
+        name: "Anime Meme Society & Fun Chat 🇯🇵",
+        category: "anime",
+        url: "https://chat.whatsapp.com/Ikz7RAZyzziB47ubLS8II2"
+      },
+      {
+        name: "Anime & Manga Fun Lounge 🎭",
+        category: "anime",
+        url: "https://chat.whatsapp.com/CrrKHWChKEw9ezlSslBK6M"
+      }
+    ];
+
+    const grid = document.getElementById("entertainment-groups-grid");
+    const tabs = document.querySelectorAll("#category-tabs .cat-btn");
+    let activeCategory = "all";
+
+    function renderCuratedFallback(category) {
+      if (!grid) return;
+      const filtered = category === "all"
+        ? curatedGroups
+        : curatedGroups.filter(g => g.category === category);
+
+      const ctaLabel = grid.getAttribute("data-cta") || "Join Group & Laugh 😂";
+
+      grid.innerHTML = filtered.map(group => `
+        <div class="group-card" data-category="${group.category}">
+          <div class="group-name">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span>${group.name}</span>
+          </div>
+          <div class="group-link">
+            <a href="${group.url}" target="_blank" rel="noopener noreferrer">${group.url}</a>
+          </div>
+          <a href="${group.url}" target="_blank" rel="noopener noreferrer" class="join-btn">${ctaLabel}</a>
+        </div>
+      `).join("");
+    }
+
+    function ensureGroupsPopulated() {
+      if (!grid) return;
+      if (grid.children.length === 0) {
+        renderCuratedFallback(activeCategory);
+      }
+    }
+
+    tabs.forEach(btn => {
+      btn.addEventListener("click", () => {
+        tabs.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeCategory = btn.getAttribute("data-cat") || "all";
+        setTimeout(() => {
+          renderCuratedFallback(activeCategory);
+        }, 30);
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      setTimeout(ensureGroupsPopulated, 120);
+    });
+    window.addEventListener("load", () => {
+      setTimeout(ensureGroupsPopulated, 200);
+    });
+  })();
+</script>
 
 </body>
 </html>

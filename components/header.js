@@ -9,6 +9,7 @@ const Header = (() => {
     { label: 'How It Works', href: '/#how-it-works' },
     { label: 'Use Cases',  href: '/#use-cases'  },
     { label: 'FAQ',        href: '/#faq'        },
+    { label: 'Free Tools', href: '/whatsapp-tools' },
     { label: 'WhatsApp Groups', href: '/whatsapp-groups' },
   ];
 
@@ -117,7 +118,8 @@ const Header = (() => {
         const p = pathOf(l);
         // a group category page (e.g. /jobs-whatsapp-groups) highlights "WhatsApp Groups"
         const active = p !== '/' && !l.getAttribute('href').includes('#') &&
-          (path === p || (p === '/whatsapp-groups' && /whatsapp-groups$/.test(path)));
+          (path === p || (p === '/whatsapp-groups' && /whatsapp-groups$/.test(path)) ||
+           (p === '/whatsapp-tools' && /^\/whatsapp-(tools|chat-button-generator|text-formatter|chat-viewer-stats)$/.test(path)));
         l.classList.toggle('active', active);
         if (active) l.setAttribute('aria-current', 'page');
       });

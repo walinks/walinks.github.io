@@ -739,7 +739,7 @@
 
 <script>
   (function () {
-    const friendshipGroups = [
+    const updatedFriendshipGroups = [
       {
         name: "Global Friends & Daily Chat 🌍",
         url: "https://chat.whatsapp.com/invite/EtUznVtEokv16H7FjXIXTZ"
@@ -767,13 +767,12 @@
     ];
 
     const grid = document.getElementById("friendship-groups-grid");
+    let isSyncing = false;
 
-    function renderFriendshipFallback() {
-      if (!grid || grid.children.length > 0) return;
-      const ctaLabel = grid.getAttribute("data-cta") || "Join Group on WhatsApp";
-
-      grid.innerHTML = friendshipGroups.map(group => `
-        <div class="group-card">
+    function buildExpectedMarkup() {
+      const ctaLabel = (grid && grid.getAttribute("data-cta")) || "Join Group on WhatsApp";
+      return updatedFriendshipGroups.map(group => `
+        <div class="group-card" data-updated-link="true">
           <div class="group-name">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
@@ -788,11 +787,40 @@
       `).join("");
     }
 
+    function applyUpdatedLinks() {
+      if (!grid || isSyncing) return;
+      const expectedUrls = updatedFriendshipGroups.map(g => g.url);
+      const renderedLinks = Array.from(grid.querySelectorAll(".group-link a")).map(a => a.getAttribute("href"));
+
+      const matchesExpected =
+        renderedLinks.length === expectedUrls.length &&
+        expectedUrls.every((url, idx) => renderedLinks[idx] === url);
+
+      if (!matchesExpected) {
+        isSyncing = true;
+        grid.innerHTML = buildExpectedMarkup();
+        setTimeout(() => {
+          isSyncing = false;
+        }, 0);
+      }
+    }
+
+    if (grid && typeof MutationObserver !== "undefined") {
+      const observer = new MutationObserver(() => {
+        applyUpdatedLinks();
+      });
+      observer.observe(grid, { childList: true, subtree: true });
+    }
+
+    applyUpdatedLinks();
     document.addEventListener("DOMContentLoaded", () => {
-      setTimeout(renderFriendshipFallback, 120);
+      applyUpdatedLinks();
+      setTimeout(applyUpdatedLinks, 120);
+      setTimeout(applyUpdatedLinks, 400);
     });
     window.addEventListener("load", () => {
-      setTimeout(renderFriendshipFallback, 200);
+      applyUpdatedLinks();
+      setTimeout(applyUpdatedLinks, 250);
     });
   })();
 </script>

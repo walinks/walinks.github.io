@@ -348,7 +348,7 @@
       <div class="section-header section-header--center" data-reveal>
         <p class="section-label">Handpicked Categories</p>
         <h2 class="section-title">Trending WhatsApp Groups</h2>
-        <p class="section-subtitle">Join thousands of active members. Click any group to get the invite link instantly.</p>
+        <p class="section-subtitle">Pick a category to see its invite links. Group links are added and refreshed regularly.</p>
       </div>
 
       <div class="groups-grid">
@@ -419,6 +419,66 @@
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
         </div>
+
+        <!-- Card: Pakistan Jobs -->
+        <div class="group-card" data-reveal data-reveal-delay="1">
+          <div class="card-icon" aria-hidden="true" style="font-size:1.7rem;display:flex;align-items:center;justify-content:center;">🇵🇰</div>
+          <h3 class="group-title">Pakistan Jobs</h3>
+          <p class="group-desc">Government and private vacancy alerts, test notices and daily job updates for Pakistan.</p>
+          <div class="group-meta"><span>24 groups listed</span></div>
+          <a href="/pakistan-jobs-whatsapp-groups">
+            Browse Groups
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+
+        <!-- Card: UAE & Gulf Jobs -->
+        <div class="group-card" data-reveal data-reveal-delay="2">
+          <div class="card-icon" aria-hidden="true" style="font-size:1.7rem;display:flex;align-items:center;justify-content:center;">🇦🇪</div>
+          <h3 class="group-title">UAE &amp; Gulf Jobs</h3>
+          <p class="group-desc">Dubai and Gulf hiring communities, from general vacancies to IT and nursing roles.</p>
+          <div class="group-meta"><span>11 groups listed</span></div>
+          <a href="/uae-gulf-jobs-whatsapp-groups">
+            Browse Groups
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+
+        <!-- Card: Online Earning -->
+        <div class="group-card" data-reveal data-reveal-delay="3">
+          <div class="card-icon" aria-hidden="true" style="font-size:1.7rem;display:flex;align-items:center;justify-content:center;">💻</div>
+          <h3 class="group-title">Online Earning</h3>
+          <p class="group-desc">Online job leads, accounts and HR vacancies, and remote-work communities.</p>
+          <div class="group-meta"><span>8 groups listed</span></div>
+          <a href="/online-earning-whatsapp-groups">
+            Browse Groups
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+
+        <!-- Card: Funny & Memes -->
+        <div class="group-card" data-reveal data-reveal-delay="4">
+          <div class="card-icon" aria-hidden="true" style="font-size:1.7rem;display:flex;align-items:center;justify-content:center;">😂</div>
+          <h3 class="group-title">Funny &amp; Memes</h3>
+          <p class="group-desc">Daily memes, jokes and viral clips for a quick laugh.</p>
+          <div class="group-meta"><span>18 groups listed</span></div>
+          <a href="/funny-memes-whatsapp-groups">
+            Browse Groups
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+
+        <!-- Card: Netflix & Web Series -->
+        <div class="group-card" data-reveal data-reveal-delay="1">
+          <div class="card-icon" aria-hidden="true" style="font-size:1.7rem;display:flex;align-items:center;justify-content:center;">📺</div>
+          <h3 class="group-title">Netflix &amp; Web Series</h3>
+          <p class="group-desc">OTT and web series chat groups for recommendations and new-season talk.</p>
+          <div class="group-meta"><span>10 groups listed</span></div>
+          <a href="/netflix-web-series-whatsapp-groups">
+            Browse Groups
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
       </div>
 
       <div style="text-align: center; margin-top: 56px;" data-reveal>
@@ -459,8 +519,6 @@
     </div>
   </section>
 
-  <!-- Toast notification -->
-  <div id="toast-container" style="position: fixed; bottom: 24px; right: 24px; z-index: 9999; display: flex; flex-direction: column; gap: 10px;"></div>
 </main>
 
 <!-- Footer -->
@@ -480,82 +538,5 @@
 <script src="components/footer.js"></script>
 <script src="js/app.js"></script>
 
-<script>
-  // Scroll reveal
-  const revealElements = document.querySelectorAll('[data-reveal]');
-  const revealOnScroll = () => {
-    for (let el of revealElements) {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 80) {
-        el.classList.add('revealed');
-      }
-    }
-  };
-  window.addEventListener('scroll', revealOnScroll);
-  window.addEventListener('load', revealOnScroll);
-  
-  // Back to top visibility
-  const backTop = document.getElementById('back-top');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) backTop.classList.add('visible');
-    else backTop.classList.remove('visible');
-  });
-  
-  // Toast utility
-  function showToast(message, isError = false) {
-    const container = document.getElementById('toast-container');
-    const toast = document.createElement('div');
-    toast.className = `toast ${isError ? 'toast--error' : 'toast--success'}`;
-    toast.style.background = isError ? '#D93025' : 'var(--green-deep)';
-    toast.style.color = '#fff';
-    toast.style.padding = '12px 20px';
-    toast.style.borderRadius = 'var(--radius-md)';
-    toast.style.fontWeight = '500';
-    toast.style.boxShadow = 'var(--shadow-lg)';
-    toast.style.display = 'flex';
-    toast.style.alignItems = 'center';
-    toast.style.gap = '12px';
-    toast.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> ${message}`;
-    container.appendChild(toast);
-    setTimeout(() => toast.remove(), 3000);
-  }
-  
-  // Handle group join (simulate invite link - in production replace with actual WA group links)
-  window.handleGroupJoin = function(event, groupName, inviteLink) {
-    event.preventDefault();
-    // For demo purpose: show actual wa.me redirection notice + open new tab? better to confirm.
-    // Since WhatsApp group invite links are typically https://chat.whatsapp.com/..., we redirect.
-    if (inviteLink && inviteLink.includes('chat.whatsapp.com')) {
-      window.open(inviteLink, '_blank');
-      showToast(`Opening ${groupName} group in WhatsApp`, false);
-    } else {
-      // Demo fallback: update to realistic pattern
-      let demoLink = '';
-      if (groupName === 'Movies & Web Series') demoLink = 'https://chat.whatsapp.com/Kl7xVqN2sFp3LmQ9';
-      else if (groupName === 'Entertainment & Funny') demoLink = 'https://chat.whatsapp.com/Jd5HpW8xRtYz';
-      else if (groupName === 'General Jobs') demoLink = 'https://chat.whatsapp.com/Bn8VcX2mQwLp';
-      else if (groupName === 'Friendship & Chat') demoLink = 'https://chat.whatsapp.com/Fg6HjU7yTrew';
-      else demoLink = inviteLink;
-      window.open(demoLink, '_blank');
-      showToast(`Joining ${groupName} group...`, false);
-    }
-  };
-  
-  // Add actual group links to each button dynamically from dataset alternative
-  document.querySelectorAll('.group-link').forEach(link => {
-    const group = link.getAttribute('data-group');
-    const storedLink = link.getAttribute('data-link');
-    if (storedLink && storedLink.includes('demo')) {
-      // replace with correct real links
-      let finalLink = '';
-      if (group === 'Movies & Web Series') finalLink = 'https://chat.whatsapp.com/Kl7xVqN2sFp3LmQ9';
-      else if (group === 'Entertainment & Funny') finalLink = 'https://chat.whatsapp.com/Jd5HpW8xRtYz';
-      else if (group === 'General Jobs') finalLink = 'https://chat.whatsapp.com/Bn8VcX2mQwLp';
-      else if (group === 'Friendship & Chat') finalLink = 'https://chat.whatsapp.com/Fg6HjU7yTrew';
-      link.setAttribute('data-link', finalLink);
-      link.setAttribute('onclick', `handleGroupJoin(event, '${group}', '${finalLink}')`);
-    }
-  });
-</script>
 </body>
 </html>

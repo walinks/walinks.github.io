@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JTB3YXT11C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JTB3YXT11C');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── Primary Meta ── -->
+  <title>{{TITLE}}</title>
+  <meta name="description" content="{{DESC}}" />
+  <meta name="keywords" content="{{KEYWORDS}}" />
+  <meta name="author" content="WALink Generator" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <link rel="canonical" href="{{URL}}" />
+
+  <!-- ── Open Graph ── -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="{{URL}}" />
+  <meta property="og:title"       content="{{TITLE}}" />
+  <meta property="og:description" content="{{DESC}}" />
+  <meta property="og:site_name"   content="WALink Generator" />
+
+  <!-- ── Twitter Card ── -->
+  <meta name="twitter:card"        content="summary" />
+  <meta name="twitter:title"       content="{{TITLE}}" />
+  <meta name="twitter:description" content="{{DESC}}" />
+
+  <!-- ── Favicon ── -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+
+  <!-- ── Preconnect ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- ── CSS (same style system) ── -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/groups.css" />
+
+  <style>
+    /* additional group-card styling */
+    .groups-hero {
+      background: linear-gradient(125deg, #0D2E24 0%, #1A4A3A 100%);
+      color: white;
+    }
+    .groups-hero .hero-title,
+    .groups-hero .hero-desc {
+      color: white;
+    }
+    .groups-hero .hero-desc {
+      color: rgba(255,255,255,0.85);
+    }
+    .group-category-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+    .groups-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 1rem;
+    }
+    .group-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-light);
+      padding: 1.25rem 1.5rem;
+      transition: all 0.25s ease;
+      box-shadow: var(--shadow-xs);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .group-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--green-primary);
+      box-shadow: var(--shadow-md);
+    }
+    .group-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+    .group-name svg {
+      width: 20px;
+      height: 20px;
+      color: var(--green-primary);
+      flex-shrink: 0;
+    }
+    .group-link {
+      font-size: 0.85rem;
+      color: var(--green-deep);
+      background: var(--green-pale);
+      padding: 0.5rem 0.75rem;
+      border-radius: var(--radius-sm);
+      word-break: break-all;
+      font-family: monospace;
+      margin: 0.75rem 0;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    .group-link a {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .group-link a:hover {
+      text-decoration: underline;
+      color: var(--green-deep);
+    }
+    .join-btn {
+      margin-top: auto;
+      background: var(--green-primary);
+      color: white;
+      padding: 0.6rem 1rem;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    .join-btn:hover {
+      background: var(--green-deep);
+      transform: scale(0.98);
+    }
+    .info-banner {
+      background: var(--green-pale);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem;
+      margin: 2rem 0;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+    .badge-jobs {
+      background: var(--green-light);
+      color: var(--green-deep);
+    }
+    @media (max-width: 640px) {
+      .groups-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>

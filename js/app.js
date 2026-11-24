@@ -27,9 +27,14 @@ const Toast = {
   }
 };
 
+/* ── HTML escape (anything user-typed that is re-rendered as HTML) ── */
+function esc(str) {
+  return String(str).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
 /* ── Phone Formatter ── */
 function sanitizePhone(raw) {
-  return raw.replace(/[^\d+]/g, '').replace(/^\+/, '').replace(/\D/g, '');
+  return String(raw || '').replace(/\D/g, '');
 }
 
 /* ── Build WA URL ── */
@@ -52,9 +57,10 @@ async function copyText(text) {
     ta.style.opacity = '0';
     document.body.appendChild(ta);
     ta.select();
-    document.execCommand('copy');
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch { ok = false; }
     ta.remove();
-    return true;
+    return ok;
   }
 }
 
@@ -62,7 +68,11 @@ async function copyText(text) {
 /* Using a CDN-based QR lib loaded in HTML */
 function generateQR(url, canvasId) {
   const canvas = document.getElementById(canvasId);
-  if (!canvas || typeof QRCode === 'undefined') return;
+  if (!canvas) return;
+  if (typeof QRCode === 'undefined') {
+    Toast.show('QR library is still loading — try again in a moment.', 'info');
+    return;
+  }
   canvas.innerHTML = '';
   new QRCode(canvas, {
     text: url,
@@ -83,12 +93,12 @@ const History = {
   add(entry) {
     const hist = this.get();
     hist.unshift({ ...entry, id: Date.now(), ts: new Date().toISOString() });
-    localStorage.setItem(this.KEY, JSON.stringify(hist.slice(0, 20)));
+    try { localStorage.setItem(this.KEY, JSON.stringify(hist.slice(0, 20))); } catch { /* storage blocked or full */ }
   },
-  clear() { localStorage.removeItem(this.KEY); },
+  clear() { try { localStorage.removeItem(this.KEY); } catch { /* ignore */ } },
   remove(id) {
     const hist = this.get().filter(h => h.id !== id);
-    localStorage.setItem(this.KEY, JSON.stringify(hist));
+    try { localStorage.setItem(this.KEY, JSON.stringify(hist)); } catch { /* ignore */ }
   },
 };
 
@@ -205,9 +215,10 @@ const Generator = {
   bindTabs() {
     document.querySelectorAll('.gen-tab').forEach(tab => {
       tab.addEventListener('click', () => {
-        document.querySelectorAll('.gen-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.gen-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
         document.querySelectorAll('.gen-panel').forEach(p => p.classList.remove('active'));
         tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
         const target = tab.dataset.tab;
         document.getElementById(`panel-${target}`)?.classList.add('active');
       });
@@ -242,19 +253,24 @@ const Generator = {
         const phone   = phoneEl?.value?.trim() || '';
         const msg     = msgEl?.value?.trim() || '';
 
-        if (!phone) {
-          Toast.show('Please enter a phone number.', 'error');
+        const digits = sanitizePhone(phone);
+        if (digits.length < 6 || digits.length > 15) {
+          Toast.show('Please enter a valid phone number (6–15 digits).', 'error');
           phoneEl.focus();
           return;
         }
 
-        const fullPhone = country ? country + phone.replace(/^0+/, '') : phone;
+        const fullPhone = country ? country + digits.replace(/^0+/, '') : digits;
         const url = buildWAUrl(fullPhone, msg);
         this.currentUrl = url;
 
         if (urlEl)   urlEl.value = url;
-        if (resultBox) resultBox.classList.remove('hidden');
-        resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        if (resultBox) {
+          resultBox.classList.remove('hidden');
+          resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        // a new link invalidates any QR code that is already showing
+        if (qrBox && !qrBox.classList.contains('hidden')) generateQR(url, 'gen-qr-canvas');
 
         // Save to history
         History.add({ phone: fullPhone, url, message: msg, country });
@@ -268,7 +284,7 @@ const Generator = {
     if (copyBtn) {
       copyBtn.addEventListener('click', async () => {
         if (!this.currentUrl) return;
-        await copyText(this.currentUrl);
+        if (!(await copyText(this.currentUrl))) { Toast.show('Copy failed — select the link and copy it manually.', 'error'); return; }
         Toast.show('Link copied to clipboard!', 'success');
         copyBtn.classList.add('copied');
         copyBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Copied!`;
@@ -292,19 +308,22 @@ const Generator = {
       qrBtn.addEventListener('click', () => {
         if (!this.currentUrl) return;
         qrBox.classList.toggle('hidden');
-        if (!qrBox.classList.contains('hidden')) {
-          generateQR(this.currentUrl, 'gen-qr-canvas');
-        }
+        const open = !qrBox.classList.contains('hidden');
+        qrBtn.setAttribute('aria-expanded', String(open));
+        if (open) generateQR(this.currentUrl, 'gen-qr-canvas');
       });
     }
 
     // Download QR
     if (dlQrBtn && qrEl) {
       dlQrBtn.addEventListener('click', () => {
+        // qrcodejs draws a <canvas> first and fills the <img> asynchronously — prefer the canvas
+        const cvs = qrEl.querySelector('canvas');
         const img = qrEl.querySelector('img');
-        if (!img) return;
+        const href = (cvs && cvs.toDataURL('image/png')) || (img && img.src);
+        if (!href) { Toast.show('Generate the QR code first.', 'error'); return; }
         const a = document.createElement('a');
-        a.href = img.src;
+        a.href = href;
         a.download = 'walink-qr.png';
         a.click();
       });
@@ -333,45 +352,54 @@ const Generator = {
       const lines = raw.split('\n').map(l => l.trim()).filter(Boolean);
       if (lines.length > 100) { Toast.show('Maximum 100 numbers at once.', 'error'); return; }
 
-      bulkLinks = lines.map(line => {
-        const parts = line.split(',');
-        const phone = sanitizePhone(parts[0]);
-        const msg   = parts[1]?.trim() || '';
-        return { phone, url: buildWAUrl(phone, msg), msg };
+      const parsed = lines.map(line => {
+        const i     = line.indexOf(',');           // message may itself contain commas
+        const phone = sanitizePhone(i === -1 ? line : line.slice(0, i));
+        const msg   = i === -1 ? '' : line.slice(i + 1).trim();
+        const valid = phone.length >= 6 && phone.length <= 15;
+        return { phone, valid, url: valid ? buildWAUrl(phone, msg) : '', msg };
       });
+      bulkLinks = parsed.slice();
+      const copyIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>';
+      const invalid  = bulkLinks.filter(b => !b.valid).length;
+      bulkLinks = bulkLinks.filter(b => b.valid);   // only valid links are copied by "Copy all"
 
       resultEl.innerHTML = '';
-      bulkLinks.forEach((item, i) => {
+      lines.forEach((line, i) => {
+        const item = parsed[i];
         const row = document.createElement('div');
         row.className = 'bulk-row';
-        row.innerHTML = `
-          <span class="bulk-num">${i + 1}</span>
-          <span class="bulk-phone">${item.phone || 'Invalid'}</span>
-          <a class="bulk-url" href="${item.url}" target="_blank" rel="noopener">${item.url}</a>
-          <button class="btn btn--ghost btn--sm bulk-copy" data-url="${item.url}">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-          </button>`;
+        row.innerHTML = item.valid
+          ? `<span class="bulk-num">${i + 1}</span>
+             <span class="bulk-phone">${esc(item.phone)}</span>
+             <a class="bulk-url" href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">${esc(item.url)}</a>
+             <button class="btn btn--ghost btn--sm bulk-copy" data-url="${esc(item.url)}" aria-label="Copy link">${copyIcon}</button>`
+          : `<span class="bulk-num">${i + 1}</span>
+             <span class="bulk-phone">Invalid</span>
+             <span class="bulk-url">Skipped — a phone number needs 6–15 digits</span>
+             <span></span>`;
         resultEl.appendChild(row);
       });
 
       resultEl.classList.remove('hidden');
       copyAllBtn?.classList.remove('hidden');
-      Toast.show(`${bulkLinks.length} links generated!`, 'success');
+      Toast.show(
+        invalid ? `${bulkLinks.length} links generated, ${invalid} skipped.` : `${bulkLinks.length} links generated!`,
+        invalid && !bulkLinks.length ? 'error' : 'success'
+      );
     });
 
     // Copy individual
     resultEl?.addEventListener('click', async e => {
       const btn = e.target.closest('.bulk-copy');
       if (!btn) return;
-      await copyText(btn.dataset.url);
-      Toast.show('Copied!', 'success');
+      Toast.show(await copyText(btn.dataset.url) ? 'Copied!' : 'Copy failed.', 'success');
     });
 
     // Copy all
     copyAllBtn?.addEventListener('click', async () => {
       const all = bulkLinks.map(b => b.url).join('\n');
-      await copyText(all);
-      Toast.show('All links copied!', 'success');
+      Toast.show(await copyText(all) ? 'All links copied!' : 'Copy failed.', 'success');
     });
   },
 
@@ -387,8 +415,8 @@ const Generator = {
       const items = TEMPLATES[cat] || [];
       listEl.innerHTML = items.map((t, i) => `
         <button class="tpl-item" data-text="${encodeURIComponent(t.text)}" data-index="${i}">
-          <span class="tpl-label">${t.label}</span>
-          <span class="tpl-preview">${t.text.substring(0, 60)}…</span>
+          <span class="tpl-label">${esc(t.label)}</span>
+          <span class="tpl-preview">${esc(t.text.length > 60 ? t.text.substring(0, 60) + '…' : t.text)}</span>
         </button>
       `).join('');
     }
@@ -426,28 +454,27 @@ const Generator = {
     el.innerHTML = hist.map(h => `
       <div class="history-item" data-id="${h.id}">
         <div class="history-meta">
-          <span class="history-phone">+${h.phone}</span>
+          <span class="history-phone">+${esc(h.phone)}</span>
           <span class="history-time">${new Date(h.ts).toLocaleString()}</span>
         </div>
         <div class="history-url-row">
-          <a class="history-url" href="${h.url}" target="_blank" rel="noopener noreferrer">${h.url}</a>
+          <a class="history-url" href="${esc(h.url)}" target="_blank" rel="noopener noreferrer">${esc(h.url)}</a>
           <div class="history-actions">
-            <button class="btn btn--ghost btn--sm hist-copy" data-url="${h.url}" data-tooltip="Copy">
+            <button class="btn btn--ghost btn--sm hist-copy" data-url="${esc(h.url)}" data-tooltip="Copy" aria-label="Copy link">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
             </button>
-            <button class="btn btn--ghost btn--sm hist-del" data-id="${h.id}" data-tooltip="Delete">
+            <button class="btn btn--ghost btn--sm hist-del" data-id="${h.id}" data-tooltip="Delete" aria-label="Delete entry">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
             </button>
           </div>
         </div>
-        ${h.message ? `<p class="history-msg">"${h.message.substring(0, 80)}${h.message.length > 80 ? '…' : ''}"</p>` : ''}
+        ${h.message ? `<p class="history-msg">"${esc(h.message.substring(0, 80))}${h.message.length > 80 ? '…' : ''}"</p>` : ''}
       </div>
     `).join('');
 
     el.querySelectorAll('.hist-copy').forEach(btn => {
       btn.addEventListener('click', async () => {
-        await copyText(btn.dataset.url);
-        Toast.show('Copied!', 'success');
+        Toast.show(await copyText(btn.dataset.url) ? 'Copied!' : 'Copy failed.', 'success');
       });
     });
     el.querySelectorAll('.hist-del').forEach(btn => {
@@ -461,12 +488,22 @@ const Generator = {
 
 /* ── FAQ Accordion ── */
 function initFAQ() {
-  document.querySelectorAll('.faq-item').forEach(item => {
+  const items = document.querySelectorAll('.faq-item');
+  const setOpen = (item, open) => {
+    item.classList.toggle('open', open);
+    item.querySelector('.faq-q')?.setAttribute('aria-expanded', String(open));
+    const a = item.querySelector('.faq-a');
+    if (a) a.hidden = false;   // some pages ship answers with [hidden]; CSS max-height handles visibility
+  };
+  items.forEach(item => {
     const q = item.querySelector('.faq-q');
-    q?.addEventListener('click', () => {
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
+    if (!q) return;
+    setOpen(item, item.classList.contains('open'));
+    q.addEventListener('click', () => {
+      const wasOpen = item.classList.contains('open');
+      const list = item.closest('.faq-list') || document;
+      list.querySelectorAll('.faq-item').forEach(i => setOpen(i, false));
+      if (!wasOpen) setOpen(item, true);
     });
   });
 }
@@ -475,15 +512,16 @@ function initFAQ() {
 function initBackTop() {
   const btn = document.getElementById('back-top');
   if (!btn) return;
-  window.addEventListener('scroll', () => {
-    btn.classList.toggle('visible', window.scrollY > 400);
-  }, { passive: true });
+  const update = () => btn.classList.toggle('visible', window.scrollY > 400);
+  window.addEventListener('scroll', update, { passive: true });
+  update();
   btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 }
 
 /* ── Scroll Reveal ── */
 function initScrollReveal() {
   const els = document.querySelectorAll('[data-reveal]');
+  if (!('IntersectionObserver' in window)) { els.forEach(el => el.classList.add('revealed')); return; }
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -498,11 +536,18 @@ function initScrollReveal() {
 /* ── Stats Counter Animation ── */
 function initCounters() {
   const counters = document.querySelectorAll('[data-counter]');
+  if (!('IntersectionObserver' in window)) {
+    counters.forEach(c => { c.textContent = parseInt(c.dataset.counter, 10).toLocaleString(); });
+    return;
+  }
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (!e.isIntersecting) return;
       const el  = e.target;
       const end = parseInt(el.dataset.counter, 10);
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        el.textContent = end.toLocaleString(); io.unobserve(el); return;
+      }
       const dur = 1800;
       const step = 16;
       let current = 0;
@@ -529,19 +574,24 @@ function initClearHistory() {
 }
 
 /* ── Init All ── */
+window.Toast = Toast;
 document.addEventListener('DOMContentLoaded', () => {
-  // Mount components
+  // Mount components first so everything below can find header/footer markup
   if (typeof Header !== 'undefined') Header.mount('#header-root');
   if (typeof Footer !== 'undefined') Footer.mount('#footer-root');
 
-  // Init features
+  // Pages other than the homepage may not ship a toast container
+  if (!document.getElementById('toast-container')) {
+    const c = document.createElement('div');
+    c.id = 'toast-container';
+    c.setAttribute('aria-live', 'polite');
+    document.body.appendChild(c);
+  }
+
   Generator.init();
   initFAQ();
   initBackTop();
   initScrollReveal();
   initCounters();
   initClearHistory();
-
-  // Expose toast globally
-  window.Toast = Toast;
 });

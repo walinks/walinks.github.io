@@ -18,6 +18,9 @@ const Footer = (() => {
       { label: 'FAQ',             href: '/#faq'          },
       { label: 'WhatsApp Formats', href: '/#formats'     },
       { label: 'WhatsApp Groups', href: '/whatsapp-groups'     },
+      { label: 'Jobs Groups',     href: '/jobs-whatsapp-groups' },
+      { label: 'Movies Groups',   href: '/movies-web-series-whatsapp-groups' },
+      { label: 'Friendship Groups', href: '/friendship-whatsapp-groups' },
     ],
     Pages: [
       { label: 'About',       href: '/about'   },

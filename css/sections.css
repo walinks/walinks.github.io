@@ -1071,14 +1071,20 @@
 @media (max-width: 640px) { .seo-grid { grid-template-columns: 1fr; gap: 32px; } }
 
 /* ── SCROLL REVEAL ── */
-[data-reveal] {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity .6s ease, transform .6s ease;
+/* Only hide reveal targets when JS can run to reveal them again */
+@media (scripting: enabled) {
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  [data-reveal].revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-[data-reveal].revealed {
-  opacity: 1;
-  transform: translateY(0);
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
 }
 [data-reveal-delay="1"] { transition-delay: .1s; }
 [data-reveal-delay="2"] { transition-delay: .2s; }
@@ -1086,3 +1092,47 @@
 [data-reveal-delay="4"] { transition-delay: .4s; }
 [data-reveal-delay="5"] { transition-delay: .5s; }
 [data-reveal-delay="6"] { transition-delay: .6s; }
+
+
+/* ── IMAGE + TEXT SPLIT (homepage "WhatsApp Groups") ── */
+.media-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.media-split-img { margin: 0; }
+.media-split-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-xl, 28px);
+  box-shadow: var(--shadow-lg, 0 20px 50px rgba(13,31,23,.12));
+}
+.media-split-text .section-title { margin-bottom: 18px; }
+.media-split-text p { font-size: .95rem; color: var(--ink-3); line-height: 1.8; margin-bottom: 14px; }
+.media-split-list { list-style: none; padding: 0; margin: 20px 0 28px; display: flex; flex-direction: column; gap: 12px; }
+.media-split-list li {
+  position: relative;
+  padding-left: 30px;
+  font-size: .95rem;
+  color: var(--ink-3);
+  line-height: 1.65;
+}
+.media-split-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0; top: 1px;
+  width: 20px; height: 20px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: var(--green-light);
+  color: var(--green-deep);
+  font-size: .75rem; font-weight: 800;
+}
+.media-split-list strong { color: var(--ink); }
+.media-split-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+@media (max-width: 860px) {
+  .media-split { grid-template-columns: 1fr; gap: 36px; }
+  .media-split-img { max-width: 480px; margin: 0 auto; }
+}

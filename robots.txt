@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://walinks.github.io/sitemap.xml

@@ -44,6 +44,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/groups.css" />
   <style>
     /* ============================================
        Core Styles — WhatsApp Link Generator Theme
@@ -718,7 +719,7 @@
         <button class="cat-btn" data-cat="web">📱 Web Series</button>
       </div>
       
-      <div class="groups-grid" id="movies-groups-grid" data-reveal></div>
+      <div class="groups-grid" id="movies-groups-grid" data-groups="movies" data-cta="Join Group &amp; Watch 🎬" data-reveal></div>
       
       <div class="info-banner" data-reveal>
         <span style="font-size: 2rem;">🎬🍿📺🎥</span>
@@ -810,196 +811,9 @@
 <script src="components/header.js"></script>
 <script src="components/footer.js"></script>
 <script src="js/app.js"></script>
+<script src="js/groups-data.js"></script>
+<script src="js/groups.js"></script>
 
 
-<script>
-  // Movies & Web Series Groups Data from the text file
-  const moviesGroups = [
-    { name: "Movie Flix Trail Group", link: "https://chat.whatsapp.com/JZgr9o2o65xFPL64bDAodB", category: "web" },
-    { name: "Latest HD Movies", link: "https://chat.whatsapp.com/FiaybxIcy4d0s1EVhCP5Mv", category: "hollywood" },
-    { name: "Movies World", link: "https://chat.whatsapp.com/Lhd3cFoKfPy0XxW5aRge7N", category: "all" },
-    { name: "Movies Hindi Download", link: "https://chat.whatsapp.com/LrYNLKUnuUd9mOyS2ZarVu", category: "bollywood" },
-    { name: "Movie Area", link: "https://chat.whatsapp.com/IdsUIIJl2XO2mWTmkBF4xu", category: "all" },
-    { name: "Movies & Music Studio", link: "https://chat.whatsapp.com/Cbk0ETxm33KDsB2TnAFYSe", category: "all" },
-    { name: "Latest Movies Links", link: "https://chat.whatsapp.com/B52IO5kqScUBczLdllSI9b", category: "all" },
-    { name: "Mᴏᴠɪᴇs & Wᴇʙ-Sᴇʀɪᴇs", link: "https://chat.whatsapp.com/BQmsCr24QEELXBESwSZPfJ", category: "web" },
-    { name: "Free Movies", link: "https://chat.whatsapp.com/L7pep2myrdyD6WfoR8ABMl", category: "all" },
-    { name: "MOVIES", link: "https://chat.whatsapp.com/IhI6ykI66jV44gQwKecWTx", category: "all" },
-    { name: "Only Movie", link: "https://chat.whatsapp.com/CVWMox5a87c8xwCiPII8Xv", category: "all" },
-    { name: "Movies on Demand", link: "https://chat.whatsapp.com/FnwLtahbI4nGDumtMBl3fa", category: "all" },
-    { name: "Hollywood Movie", link: "https://chat.whatsapp.com/LgElmgO5g8wCHfFOnYnOmT", category: "hollywood" },
-    { name: "Download Movies", link: "https://chat.whatsapp.com/Fddl7Hn4F21KUGXFJSMs0d", category: "all" },
-    { name: "Movie's Club", link: "https://chat.whatsapp.com/KFOe4dWIAea0CFR07ZDvZf", category: "all" },
-    { name: "All Movies Download", link: "https://chat.whatsapp.com/DTyKyBjM4SlHTNj6vg5nWo", category: "all" },
-    { name: "ÃLL Møvîê'& Wéb SSêrïés", link: "https://chat.whatsapp.com/IH5Hyv7YLibAWkZXfqo6At", category: "web" },
-    { name: "Free Movies 4 U", link: "https://chat.whatsapp.com/KJajbG1eurf7iNQcbOwQ7a", category: "all" },
-    { name: "All Movies And Dramas", link: "https://chat.whatsapp.com/DRBmm1biF7CEu82cRIfSex", category: "all" },
-    { name: "Qureshi Movieflixs", link: "https://chat.whatsapp.com/HFzSfVuSHdj1gSYBFVzgb0", category: "all" },
-    { name: "Movies/Sci-fi", link: "https://chat.whatsapp.com/IXDW3091kw6JGyzwbT4e59", category: "hollywood" },
-    { name: "Pirate Flix Movies", link: "https://chat.whatsapp.com/KYJCRb3afEz20XEPNdJwcM", category: "all" },
-    { name: "Movies Hub", link: "https://chat.whatsapp.com/LwNGmSnhftyK9rCwGbNJC7", category: "all" },
-    { name: "Get Movie Now", link: "https://chat.whatsapp.com/Gcezwcl0B9I8DDCYBZlQhE", category: "all" },
-    { name: "Movies Group", link: "https://chat.whatsapp.com/CpE0fbDB4rFEnsrpSHLdEc", category: "all" },
-    { name: "MOVIES+WEB SERIES", link: "https://chat.whatsapp.com/KTbdk6ji2S4AWbj5LQn6Op", category: "web" },
-    { name: "All Bollywood Movie", link: "https://chat.whatsapp.com/D2JHoi9oADHLFKRYzkUJfd", category: "bollywood" },
-    { name: "Movies Old & New", link: "https://chat.whatsapp.com/HmJTBURSLyIF4JTfBkYWc6", category: "all" },
-    { name: "Movie House 294", link: "https://chat.whatsapp.com/Eg2y3aMHlA9DDnuqMdlp2R", category: "all" },
-    { name: "Full Movies On WhatsApp", link: "https://chat.whatsapp.com/BnS4kuyvhZh5EjbpEuMdpd", category: "all" },
-    { name: "MOVIES LOVER", link: "https://chat.whatsapp.com/D4HfG5vNOxEAtsHkngCF9c", category: "all" },
-    { name: "Movie Full HD", link: "https://chat.whatsapp.com/DL6L3nMPa542SPMk0ycilR", category: "all" },
-    { name: "Premium Movies", link: "https://chat.whatsapp.com/BE9PLUw9Ivq7fztBCYS0Ka", category: "all" },
-    { name: "Popcorn Playlist", link: "https://chat.whatsapp.com/Cbk0ETxm33KDsB2TnAFYSe", category: "all" },
-    { name: "Netflix Movies Free", link: "https://chat.whatsapp.com/J5SZzxZcVnKGeMgAvY3ZH1", category: "netflix" },
-    { name: "All Movies Hub", link: "https://chat.whatsapp.com/FQk1qzJMgtXAVXY6EkKv00", category: "all" },
-    { name: "All Netflix Movie", link: "https://chat.whatsapp.com/IKXw5mZNc9j89LSpuPwgIX", category: "netflix" },
-    { name: "Netflix 2.0", link: "https://chat.whatsapp.com/Ct48tJ4qFFP6uFvrOm3W4J", category: "netflix" },
-    { name: "Netflix Tamil Movies", link: "https://chat.whatsapp.com/HFGQZrkquerCXMquiLlkyV", category: "netflix" },
-    { name: "Bollywood & South Dubbed", link: "https://chat.whatsapp.com/Bb8AOOm2vFw3W7UOYyhdmj", category: "south" },
-    { name: "Movies and Web Series", link: "https://chat.whatsapp.com/ChpnlQFFYCu10t3cunrH41", category: "web" },
-    { name: "Movies Ka Adda", link: "https://chat.whatsapp.com/KRhQH6SwOgi6T5V8KHQwMZ", category: "all" },
-    { name: "Cinema Hunter's", link: "https://chat.whatsapp.com/DLXTslmmiED2wROgrfg8Am", category: "all" },
-    { name: "Shine Movies", link: "https://chat.whatsapp.com/CDIrctDIW0ZHW8ASEbbrL1", category: "all" },
-    { name: "HD Movies", link: "https://chat.whatsapp.com/HEb5yQsUQbm2Qox8WVmyWn", category: "all" },
-    { name: "Movies Fan", link: "https://chat.whatsapp.com/HmSuokVREzbKQn4OFxP0zZ", category: "all" },
-    { name: "Movies Verse", link: "https://chat.whatsapp.com/Cbk0ETxm33KDsB2TnAFYSe", category: "all" },
-    { name: "Movies Downloader", link: "https://chat.whatsapp.com/JPfItDbq5vKCIj9QO49HqD", category: "all" },
-    { name: "South Hindi Movies", link: "https://chat.whatsapp.com/HEdJwKorNLNJkE3DVnoOVw", category: "south" },
-    { name: "Hollywood", link: "https://chat.whatsapp.com/KeqeIfz7LZRBejPXV47XFF", category: "hollywood" },
-    { name: "HB Movies", link: "https://chat.whatsapp.com/LNSCpQoboXt0orXrLkJgFp", category: "all" },
-    { name: "Hollywood Movie Download", link: "https://chat.whatsapp.com/FYruGX13h2HBS6xD5d9vgV", category: "hollywood" },
-    { name: "Prime Flix Cinema", link: "https://chat.whatsapp.com/ElMtt1dvXbiG7NqFmYifO3", category: "all" },
-    { name: "Dead for a Dollar", link: "https://chat.whatsapp.com/KY3QeueVwTwLBOJ6QvMUxe", category: "hollywood" },
-    { name: "Hell Hath No Fury", link: "https://chat.whatsapp.com/EIt6NSqexxEJvrvKmKjZzT", category: "hollywood" },
-    { name: "Short Film Artist", link: "https://chat.whatsapp.com/GdrWd2kGXJQ7KttG5iGQSo", category: "all" },
-    { name: "Families Movies Only", link: "https://chat.whatsapp.com/Hwb04ufpjPNClEKURf7ouN", category: "all" },
-    { name: "Terabox Movie Link", link: "https://chat.whatsapp.com/JYsB7ZULnIPE4Xz4IOgzL1", category: "all" },
-    { name: "ipopkorn Movies", link: "https://chat.whatsapp.com/IipY5ibaqNpHmmm7CRVDYc", category: "all" },
-    { name: "Free Trail Movies", link: "https://chat.whatsapp.com/HP4jTALug4KGUKVsWN9oHm", category: "all" },
-    { name: "Movies WhatsApp Group", link: "https://chat.whatsapp.com/BhWCxxdOJqB8CLgYG0tNdS", category: "all" },
-    { name: "1 Serial Videos Movies", link: "https://chat.whatsapp.com/B9IekcruHp8FV0RAARAfYP", category: "web" },
-    { name: "BEST AKILA FLIM", link: "https://chat.whatsapp.com/KFIpFVA01zbHlbCvFLCuvT", category: "all" },
-    { name: "Enjoy Movies", link: "https://chat.whatsapp.com/DQWBamS362CITW1zMseAM6", category: "all" },
-    { name: "Netflix Movies", link: "https://chat.whatsapp.com/J5SZzxZcVnKGeMgAvY3ZH1", category: "netflix" },
-    { name: "HD Movies Area", link: "https://chat.whatsapp.com/HEb5yQsUQbm2Qox8WVmyWn", category: "all" },
-    { name: "Cinema Adda", link: "https://chat.whatsapp.com/KRhQH6SwOgi6T5V8KHQwMZ", category: "all" },
-    { name: "Web Series Hub", link: "https://chat.whatsapp.com/BQmsCr24QEELXBESwSZPfJ", category: "web" },
-    { name: "Bollywood Movies", link: "https://chat.whatsapp.com/D2JHoi9oADHLFKRYzkUJfd", category: "bollywood" },
-    { name: "Hollywood Dubbed", link: "https://chat.whatsapp.com/LgElmgO5g8wCHfFOnYnOmT", category: "hollywood" },
-    { name: "South Indian Movies", link: "https://chat.whatsapp.com/HEdJwKorNLNJkE3DVnoOVw", category: "south" },
-    { name: "OTT Movies", link: "https://chat.whatsapp.com/ChpnlQFFYCu10t3cunrH41", category: "netflix" },
-    { name: "Movie Lovers", link: "https://chat.whatsapp.com/HmSuokVREzbKQn4OFxP0zZ", category: "all" },
-    { name: "New Releases Movies", link: "https://chat.whatsapp.com/B52IO5kqScUBczLdllSI9b", category: "all" },
-    { name: "Drama Web Series", link: "https://chat.whatsapp.com/DRBmm1biF7CEu82cRIfSex", category: "web" },
-    { name: "Sci-Fi Movies", link: "https://chat.whatsapp.com/IXDW3091kw6JGyzwbT4e59", category: "hollywood" },
-    { name: "Pirate Movies", link: "https://chat.whatsapp.com/KYJCRb3afEz20XEPNdJwcM", category: "all" },
-    { name: "Prime Video Movies", link: "https://chat.whatsapp.com/ElMtt1dvXbiG7NqFmYifO3", category: "netflix" },
-    { name: "All Bollywood", link: "https://chat.whatsapp.com/D2JHoi9oADHLFKRYzkUJfd", category: "bollywood" },
-    { name: "HD Web Series", link: "https://chat.whatsapp.com/FiaybxIcy4d0s1EVhCP5Mv", category: "web" },
-    { name: "Movie Download Hub", link: "https://chat.whatsapp.com/LrYNLKUnuUd9mOyS2ZarVu", category: "all" },
-    { name: "Netflix & Chill", link: "https://chat.whatsapp.com/Ct48tJ4qFFP6uFvrOm3W4J", category: "netflix" },
-    { name: "Tamil Movies", link: "https://chat.whatsapp.com/HFGQZrkquerCXMquiLlkyV", category: "south" },
-    { name: "Global Movies", link: "https://chat.whatsapp.com/Lhd3cFoKfPy0XxW5aRge7N", category: "all" },
-    { name: "Action Movies", link: "https://chat.whatsapp.com/Eg2y3aMHlA9DDnuqMdlp2R", category: "hollywood" },
-    { name: "Romance Web Series", link: "https://chat.whatsapp.com/BnS4kuyvhZh5EjbpEuMdpd", category: "web" },
-    { name: "Horror Movies", link: "https://chat.whatsapp.com/KY3QeueVwTwLBOJ6QvMUxe", category: "hollywood" },
-    { name: "Comedy Movies", link: "https://chat.whatsapp.com/D4HfG5vNOxEAtsHkngCF9c", category: "all" },
-    { name: "Classic Movies", link: "https://chat.whatsapp.com/HmJTBURSLyIF4JTfBkYWc6", category: "all" },
-    { name: "Trending Web Series", link: "https://chat.whatsapp.com/KTbdk6ji2S4AWbj5LQn6Op", category: "web" },
-    { name: "Disney+ Movies", link: "https://chat.whatsapp.com/FnwLtahbI4nGDumtMBl3fa", category: "netflix" },
-    { name: "Amazon Prime", link: "https://chat.whatsapp.com/IH5Hyv7YLibAWkZXfqo6At", category: "netflix" },
-    { name: "Hotstar Movies", link: "https://chat.whatsapp.com/L7pep2myrdyD6WfoR8ABMl", category: "netflix" },
-    { name: "International Movies", link: "https://chat.whatsapp.com/LgElmgO5g8wCHfFOnYnOmT", category: "hollywood" },
-    { name: "South Dubbed", link: "https://chat.whatsapp.com/Bb8AOOm2vFw3W7UOYyhdmj", category: "south" },
-    { name: "Movie Reviews", link: "https://chat.whatsapp.com/DLXTslmmiED2wROgrfg8Am", category: "all" },
-    { name: "Latest OTT Releases", link: "https://chat.whatsapp.com/CDIrctDIW0ZHW8ASEbbrL1", category: "netflix" },
-    { name: "Movies & Series Hub", link: "https://chat.whatsapp.com/JPfItDbq5vKCIj9QO49HqD", category: "all" }
-  ];
-
-  let currentCategory = "all";
-
-  function renderGroups() {
-    const container = document.getElementById('movies-groups-grid');
-    if (!container) return;
-    
-    let filtered = moviesGroups;
-    if (currentCategory !== "all") {
-      filtered = moviesGroups.filter(g => g.category === currentCategory);
-    }
-    
-    if (filtered.length === 0) {
-      container.innerHTML = '<div class="card" style="text-align:center;padding:3rem;">🎬 More movie groups coming soon! Check back for updates.</div>';
-      return;
-    }
-    
-    container.innerHTML = filtered.map(group => `
-      <div class="group-card">
-        <div class="group-name">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 6v12"/><path d="M16 6v12"/><path d="M2 10h6"/><path d="M2 14h6"/><path d="M16 10h6"/><path d="M16 14h6"/></svg>
-          ${escapeHtml(group.name.length > 45 ? group.name.substring(0, 45) + '...' : group.name)}
-        </div>
-        <div class="group-link">
-          <a href="${group.link}" target="_blank" rel="noopener noreferrer">${group.link.substring(0, 55)}...</a>
-        </div>
-        <a href="${group.link}" class="join-btn" target="_blank" rel="noopener noreferrer">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          Join Group & Watch 🎬
-        </a>
-      </div>
-    `).join('');
-  }
-
-  function escapeHtml(str) {
-    return str.replace(/[&<>]/g, function(m) {
-      if (m === '&') return '&amp;';
-      if (m === '<') return '&lt;';
-      if (m === '>') return '&gt;';
-      return m;
-    });
-  }
-
-  // Category filtering
-  document.querySelectorAll('.cat-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      currentCategory = btn.getAttribute('data-cat');
-      renderGroups();
-    });
-  });
-
-  renderGroups();
-
-  // FAQ toggle
-  document.querySelectorAll('.faq-item').forEach(item => {
-    const btn = item.querySelector('.faq-q');
-    btn.addEventListener('click', () => {
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
-    });
-  });
-
-  // Scroll reveal
-  const revealElements = document.querySelectorAll('[data-reveal]');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('revealed'); });
-  }, { threshold: 0.1 });
-  revealElements.forEach(el => observer.observe(el));
-
-  // Back to top
-  const backTop = document.getElementById('back-top');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) backTop.style.display = 'flex';
-    else backTop.style.display = 'none';
-  });
-  backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-  // Header scroll effect
-  window.addEventListener('scroll', () => {
-    const header = document.getElementById('site-header');
-    if (window.scrollY > 50) header.classList.add('scrolled');
-    else header.classList.remove('scrolled');
-  });
-</script>
 </body>
 </html>

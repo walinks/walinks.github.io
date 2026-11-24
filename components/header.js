@@ -5,10 +5,11 @@
 const Header = (() => {
   const NAV_LINKS = [
     { label: 'Generator',  href: '/#generator' },
-    { label: 'Features',   href: '/features'  },
+    { label: 'Features',   href: '/#features'  },
     { label: 'How It Works', href: '/#how-it-works' },
     { label: 'Use Cases',  href: '/#use-cases'  },
     { label: 'FAQ',        href: '/#faq'        },
+    { label: 'WhatsApp Groups', href: '/whatsapp-groups' },
   ];
 
   function render() {
@@ -68,17 +69,19 @@ const Header = (() => {
     const toggle   = document.getElementById('nav-toggle');
     const nav      = document.getElementById('header-nav');
     const overlay  = document.getElementById('nav-overlay');
+    if (!header || !toggle || !nav || !overlay) return;
 
-    // Scroll shrink
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 60);
-    }, { passive: true });
+    // Scroll shrink (run once on load too, in case the page is restored mid-scroll)
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 60);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
 
     // Mobile toggle
     function openMenu() {
       nav.classList.add('open');
       overlay.classList.add('active');
       toggle.setAttribute('aria-expanded', 'true');
+      toggle.setAttribute('aria-label', 'Close menu');
       toggle.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
@@ -86,6 +89,7 @@ const Header = (() => {
       nav.classList.remove('open');
       overlay.classList.remove('active');
       toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open menu');
       toggle.classList.remove('active');
       document.body.style.overflow = '';
     }
@@ -94,22 +98,39 @@ const Header = (() => {
       nav.classList.contains('open') ? closeMenu() : openMenu();
     });
     overlay.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    window.addEventListener('resize', () => { if (window.innerWidth > 900) closeMenu(); });
 
     // Close on nav link click
-    nav.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', closeMenu);
-    });
+    nav.querySelectorAll('.nav-link').forEach(link => link.addEventListener('click', closeMenu));
 
-    // Active link on scroll
-    const sections = document.querySelectorAll('section[id]');
-    const links    = nav.querySelectorAll('.nav-link');
+    // Active link: page links match the current path; on the homepage, section
+    // links ('/#features') follow the section currently in view.
+    const links = Array.from(nav.querySelectorAll('.nav-link'));
+    const path  = location.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+    const isHome = path === '/' || path === '';
+    const hashOf = l => (l.getAttribute('href').split('#')[1] || '');
+    const pathOf = l => (l.getAttribute('href').split('#')[0] || '/');
+
+    if (!isHome) {
+      links.forEach(l => {
+        const p = pathOf(l);
+        // a group category page (e.g. /jobs-whatsapp-groups) highlights "WhatsApp Groups"
+        const active = p !== '/' && !l.getAttribute('href').includes('#') &&
+          (path === p || (p === '/whatsapp-groups' && /whatsapp-groups$/.test(path)));
+        l.classList.toggle('active', active);
+        if (active) l.setAttribute('aria-current', 'page');
+      });
+      return;
+    }
+
+    const sectionLinks = links.filter(l => hashOf(l));
+    const sections = sectionLinks.map(l => document.getElementById(hashOf(l))).filter(Boolean);
+    if (!('IntersectionObserver' in window) || !sections.length) return;
     const io = new IntersectionObserver(entries => {
       entries.forEach(e => {
-        if (e.isIntersecting) {
-          links.forEach(l => {
-            l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id);
-          });
-        }
+        if (!e.isIntersecting) return;
+        sectionLinks.forEach(l => l.classList.toggle('active', hashOf(l) === e.target.id));
       });
     }, { rootMargin: '-40% 0px -55% 0px' });
     sections.forEach(s => io.observe(s));

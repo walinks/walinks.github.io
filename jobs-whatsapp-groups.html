@@ -44,6 +44,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/groups.css" />
 
   <style>
     /* additional group-card styling */
@@ -277,19 +278,19 @@
       <!-- Category: Pakistan Jobs & Daily Alerts -->
       <div data-reveal>
         <div class="group-category-title">🇵🇰 Pakistan Jobs & Daily Alerts</div>
-        <div class="groups-grid" id="pakistan-jobs-grid"></div>
+        <div class="groups-grid" id="pakistan-jobs-grid" data-groups="jobs" data-cat-group="pakistan" data-cta="Join Group on WhatsApp"></div>
       </div>
 
       <!-- Category: UAE / Gulf Jobs -->
       <div style="margin-top: 3.5rem;" data-reveal data-reveal-delay="2">
         <div class="group-category-title">🇦🇪 UAE / Gulf Jobs Groups</div>
-        <div class="groups-grid" id="gulf-jobs-grid"></div>
+        <div class="groups-grid" id="gulf-jobs-grid" data-groups="jobs" data-cat-group="gulf" data-cta="Join Group on WhatsApp"></div>
       </div>
 
       <!-- Category: Online Earning & Additional Groups -->
       <div style="margin-top: 3.5rem;" data-reveal data-reveal-delay="3">
         <div class="group-category-title">💻 Online Earning & Additional Communities</div>
-        <div class="groups-grid" id="online-earn-grid"></div>
+        <div class="groups-grid" id="online-earn-grid" data-groups="jobs" data-cat-group="online" data-cta="Join Group on WhatsApp"></div>
       </div>
 
       <!-- Info Banner -->
@@ -309,7 +310,7 @@
         <h2 class="section-title" id="how-join-title">How to Join a WhatsApp Job Group</h2>
         <p class="section-subtitle">Get started in seconds and never miss a job opportunity again.</p>
       </div>
-      <div class="steps-grid" style="grid-template-columns: repeat(3,1fr);" role="list">
+      <div class="steps-grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));" role="list">
         <div class="step-card card" role="listitem" data-reveal>
           <div class="step-number">1</div>
           <h3 class="step-title">Browse Groups</h3>
@@ -355,10 +356,10 @@
         <p class="section-subtitle">Everything about jobs WhatsApp groups, safety, and usage.</p>
       </div>
       <div class="faq-list" style="max-width:860px;margin:0 auto;">
-        <div class="faq-item"><button class="faq-q" aria-expanded="false">Are these WhatsApp groups free to join?<span class="faq-icon">+</span></button><div class="faq-a" hidden><p>Yes, all groups listed are 100% free. No payment required to join any community. Beware of any group asking for money — they are not affiliated with us.</p></div></div>
-        <div class="faq-item"><button class="faq-q" aria-expanded="false">How often do you update the group links?<span class="faq-icon">+</span></button><div class="faq-a" hidden><p>We refresh job group links every week. If a group becomes full or expired, we replace it with an active alternative. Bookmark this page for fresh links.</p></div></div>
-        <div class="faq-item"><button class="faq-q" aria-expanded="false">Can I submit my own job group link?<span class="faq-icon">+</span></button><div class="faq-a" hidden><p>Absolutely. If you manage a genuine jobs group, contact us via the link in the footer, and we'll review it for inclusion.</p></div></div>
-        <div class="faq-item"><button class="faq-q" aria-expanded="false">What's the difference between "Jobs Dunya" and "UAE Job Vacancy"?<span class="faq-icon">+</span></button><div class="faq-a" hidden><p>Jobs Dunya focuses on Pakistan-based government and private jobs. UAE Job Vacancy is dedicated to Dubai/Abu Dhabi opportunities. Choose according to your target region.</p></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">Are these WhatsApp groups free to join?<span class="faq-icon">+</span></button><div class="faq-a"><p>Yes, all groups listed are 100% free. No payment required to join any community. Beware of any group asking for money — they are not affiliated with us.</p></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">How often do you update the group links?<span class="faq-icon">+</span></button><div class="faq-a"><p>We refresh job group links every week. If a group becomes full or expired, we replace it with an active alternative. Bookmark this page for fresh links.</p></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">Can I submit my own job group link?<span class="faq-icon">+</span></button><div class="faq-a"><p>Absolutely. If you manage a genuine jobs group, contact us via the link in the footer, and we'll review it for inclusion.</p></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">What's the difference between "Jobs Dunya" and "UAE Job Vacancy"?<span class="faq-icon">+</span></button><div class="faq-a"><p>Jobs Dunya focuses on Pakistan-based government and private jobs. UAE Job Vacancy is dedicated to Dubai/Abu Dhabi opportunities. Choose according to your target region.</p></div></div>
       </div>
     </div>
   </section>
@@ -387,122 +388,8 @@
 <script src="components/header.js"></script>
 <script src="components/footer.js"></script>
 <script src="js/app.js"></script>
+<script src="js/groups-data.js"></script>
+<script src="js/groups.js"></script>
 
-<script>
-  // Group data extracted from Jobs WhatsApp Group Links.txt and categorized
-  const allGroups = [
-    // Pakistan / Daily Jobs
-    { name: "Daily Jobs Updates (Channel)", link: "https://www.whatsapp.com/channel/0029VaDMsIeHgZWgt5CyBi1k", category: "pakistan" },
-    { name: "Jobs Dunya Group", link: "https://chat.whatsapp.com/EA7T2gESmu70A05H36ebBd", category: "pakistan" },
-    { name: "Jobs Dunya Group 2", link: "https://chat.whatsapp.com/JmorwqA2UatGjKUq1rpQUm", category: "pakistan" },
-    { name: "Sindh 1 – Jobs Dunya", link: "https://chat.whatsapp.com/CF1Dy7inVms5K6iSGnOciA", category: "pakistan" },
-    { name: "Punjab 1 – Jobs Dunya", link: "https://chat.whatsapp.com/DGqDsGSeyfT3fMjh32lVKz", category: "pakistan" },
-    { name: "KP – Jobs Dunya", link: "https://chat.whatsapp.com/HbzX9WvbzSlCbPderkLhL9", category: "pakistan" },
-    { name: "Free Courses And Jobs", link: "https://chat.whatsapp.com/JcBoBXUFu1dJBaUIAIATP3", category: "pakistan" },
-    { name: "Jobs Alert Pakistan", link: "https://chat.whatsapp.com/GZ1lg4KNgbT3db99rH6HYT", category: "pakistan" },
-    { name: "Job Path Advisors", link: "https://chat.whatsapp.com/FwQnQtYing37UjTRMCHSjA", category: "pakistan" },
-    { name: "Pakistan Writes Jobs", link: "https://chat.whatsapp.com/JFTKbJEgJzuDwm95kwPpaI", category: "pakistan" },
-    { name: "All Jobs Update", link: "https://chat.whatsapp.com/E0FxfPxaw8k95PrWDTvJtF", category: "pakistan" },
-    { name: "Latest Jobs In Pakistan", link: "https://chat.whatsapp.com/I9IyNaM9NI8D9CQWF4nFap", category: "pakistan" },
-    { name: "GOVTS JOBS UPDATES", link: "https://chat.whatsapp.com/FSIPCp5tAfeAD54swllHDs", category: "pakistan" },
-    { name: "Jobs Daily Pakistan", link: "https://chat.whatsapp.com/Ilep4VMUikNCWgxf1Mbavt", category: "pakistan" },
-    { name: "Gov Job", link: "https://chat.whatsapp.com/EldXArPzwcw3MoVb7NmSeF", category: "pakistan" },
-    { name: "All Pakistan Govt Jobs", link: "https://chat.whatsapp.com/KLUiKMbSULW1JrkhCZdjDp", category: "pakistan" },
-    { name: "Pak Jobs", link: "https://chat.whatsapp.com/LqbLiI40edP5MQtfJ61Vjv", category: "pakistan" },
-    { name: "Government Ads & Online Jobs", link: "https://chat.whatsapp.com/HxKbcR0LIyjKPJXNuwEGso", category: "pakistan" },
-    { name: "Jobs Link", link: "https://chat.whatsapp.com/J7ipDYdeqWl6BNn32LuwOH", category: "pakistan" },
-    { name: "News for Jobs", link: "https://chat.whatsapp.com/2iuYZpj97OpGNfw5TwViug", category: "pakistan" },
-    { name: "PK24JOBS", link: "https://chat.whatsapp.com/FS66yb2NKjO7bQ6THdJw2f", category: "pakistan" },
-    { name: "Jobs Group", link: "https://chat.whatsapp.com/GGsbtGfCjsmEmdeDpaiaOi", category: "pakistan" },
-    { name: "NewJobsToday #1", link: "https://chat.whatsapp.com/Ex75qxF1PlmKkqa4d55Ie4", category: "pakistan" },
-    { name: "GK Pakistan", link: "https://chat.whatsapp.com/EvNyRwMndPZLLgOCuMDlhn", category: "pakistan" },
-    // UAE / GULF
-    { name: "UAE Job Vacancy", link: "https://chat.whatsapp.com/HzlK44j8HBICBEhx0b4Xmt", category: "gulf" },
-    { name: "Latest Dubai Jobs", link: "https://chat.whatsapp.com/GBA2azK0vZXJDp9Eok3ca8", category: "gulf" },
-    { name: "Jobs in UAE 2026", link: "https://chat.whatsapp.com/Gs2YArMZSPG2hTUmkzqWCE", category: "gulf" },
-    { name: "Job Desk UAE", link: "https://chat.whatsapp.com/GbobALfqUmqIShWU2CXrsT", category: "gulf" },
-    { name: "Gulf Jobs", link: "https://chat.whatsapp.com/6iRRdv2Jg1RKraZy8CwGal", category: "gulf" },
-    { name: "Dubai Jobs Update", link: "https://chat.whatsapp.com/LwKyLdvoeqk61r4ErxusLX", category: "gulf" },
-    { name: "Dubai Driver Jobs", link: "https://chat.whatsapp.com/GBA2azK0vZXJDp9Eok3ca8", category: "gulf" },
-    { name: "UAE Jobs 2025", link: "https://chat.whatsapp.com/83bTVcd62A2EvNtsE9urqz", category: "gulf" },
-    { name: "Dubai New Jobs", link: "https://chat.whatsapp.com/KrlFO2JX2y95vXtyTMQt53", category: "gulf" },
-    { name: "Software Engineer Dubai", link: "https://chat.whatsapp.com/LJrWNqdmwBM1qtdht4fOS8", category: "gulf" },
-    { name: "Nursing Jobs Dubai", link: "https://chat.whatsapp.com/AbQniKEndHS9Y1WcsCdD3E", category: "gulf" },
-    { name: "Cyber Security Dubai", link: "https://chat.whatsapp.com/5ZOYAYP2Q3O2wRRLafU6Fn", category: "gulf" },
-    // Online / Additional
-    { name: "Online Job", link: "https://chat.whatsapp.com/L7KU5a94NQz0CUdYwk9Jp8", category: "online" },
-    { name: "Trusted Online Jobs", link: "https://chat.whatsapp.com/L832XFMdRnQDtjTxnpV4hc", category: "online" },
-    { name: "Online Earning", link: "https://chat.whatsapp.com/GVJQmWffcgP5IdsS2EFPns", category: "online" },
-    { name: "Daily Jobs Updates", link: "https://chat.whatsapp.com/DULWsgGoibR96tsau0G4IV", category: "online" },
-    { name: "Jobs Dunya Group 3", link: "https://chat.whatsapp.com/7bRqXnDzdNX1erwkOMg9ad", category: "online" },
-    { name: "Job Alert", link: "https://chat.whatsapp.com/6y0cecykeL7D4mqAOIZ0kV", category: "online" },
-    { name: "Accounts & Finance Jobs", link: "https://chat.whatsapp.com/HI3mQkaKblNDqB7GEF2nPM", category: "online" },
-    { name: "HR & Admin Jobs", link: "https://chat.whatsapp.com/IK1P2NVkWjDDYiXLoTHcK7", category: "online" }
-  ];
-
-  function renderGroups(containerId, categoryFilter) {
-    const container = document.getElementById(containerId);
-    if(!container) return;
-    const filtered = allGroups.filter(g => g.category === categoryFilter);
-    if(filtered.length === 0) {
-      container.innerHTML = '<p class="card" style="padding: 2rem; text-align:center;">✨ More groups coming soon. Stay tuned.</p>';
-      return;
-    }
-    container.innerHTML = filtered.map(group => `
-      <div class="group-card">
-        <div class="group-name">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          ${escapeHtml(group.name)}
-        </div>
-        <div class="group-link">
-          <a href="${group.link}" target="_blank" rel="noopener noreferrer">${group.link.substring(0, 50)}...</a>
-        </div>
-        <button class="join-btn" onclick="window.open('${group.link}', '_blank')">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          Join Group on WhatsApp
-        </button>
-      </div>
-    `).join('');
-  }
-
-  function escapeHtml(str) {
-    return str.replace(/[&<>]/g, function(m) {
-      if(m === '&') return '&amp;';
-      if(m === '<') return '&lt;';
-      if(m === '>') return '&gt;';
-      return m;
-    });
-  }
-
-  // render all sections
-  renderGroups("pakistan-jobs-grid", "pakistan");
-  renderGroups("gulf-jobs-grid", "gulf");
-  renderGroups("online-earn-grid", "online");
-
-  // FAQ toggle + same script as original
-  document.querySelectorAll('.faq-q').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', !expanded);
-      const content = btn.nextElementSibling;
-      if(!expanded) {
-        content.hidden = false;
-        content.style.maxHeight = content.scrollHeight + 'px';
-        item.classList.add('open');
-      } else {
-        content.hidden = true;
-        content.style.maxHeight = null;
-        item.classList.remove('open');
-      }
-    });
-  });
-  // scroll reveal imitation
-  const revealElements = document.querySelectorAll('[data-reveal]');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('revealed'); });
-  }, { threshold: 0.1 });
-  revealElements.forEach(el => observer.observe(el));
-</script>
 </body>
 </html>
